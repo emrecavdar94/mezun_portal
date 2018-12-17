@@ -1,5 +1,4 @@
 AmCharts.themes.light = {
-
 	themeName:"light",
 
 	AmChart: {
@@ -167,7 +166,6 @@ AmCharts.themes.light = {
 	},
 
 	DataSetSelector: {
-
 		color: "#000000",
 		selectedBackgroundColor: "#b9cdf5",
 		rollOverBackgroundColor: "#a8b0e4"
@@ -185,5 +183,4 @@ AmCharts.themes.light = {
 		border: "1px solid rgba(0, 0, 0, .3)",
 		outline: "none"
 	}
-
 };

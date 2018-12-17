@@ -603,7 +603,6 @@ if ( !AmCharts.translations[ "export" ][ "en" ] ) {
 					if ( _this.libs.async ) {
 						node.setAttribute( "async", "" );
 					}
-
 				} else if ( src.indexOf( ".css" ) != -1 ) {
 					node = document.createElement( "link" );
 					node.setAttribute( "type", "text/css" );
@@ -629,7 +628,6 @@ if ( !AmCharts.translations[ "export" ][ "en" ] ) {
 					node.addEventListener( "load", callback );
 					document.head.appendChild( node );
 				}
-
 			},
 
 			/**
@@ -777,7 +775,6 @@ if ( !AmCharts.translations[ "export" ][ "en" ] ) {
 				}
 				return true;
 			},
-
 
 			getAngle: function( x1, y1, x2, y2 ) {
 				var x = x2 - x1;
@@ -1289,7 +1286,6 @@ if ( !AmCharts.translations[ "export" ][ "en" ] ) {
 					_this.setup.wrapper.setAttribute( "class", _this.setup.chart.classNamePrefix + "-export-canvas active" );
 					_this.setup.wrapper.style.backgroundColor = cfg.backgroundColor;
 					_this.setup.wrapper.style.display = "block";
-
 				} else {
 					_this.setup.wrapper.setAttribute( "class", _this.setup.chart.classNamePrefix + "-export-canvas" );
 					_this.setup.wrapper.style.display = "none";
@@ -1303,10 +1299,8 @@ if ( !AmCharts.translations[ "export" ][ "en" ] ) {
 
 					// STOCK CHART; SVG OFFSET;; SVG OFFSET
 					if ( _this.setup.chart.type == "stock" && _this.setup.chart.legendSettings.position ) {
-
 						// TOP / BOTTOM
 						if ( [ "top", "bottom" ].indexOf( _this.setup.chart.legendSettings.position ) != -1 ) {
-
 							// POSITION; ABSOLUTE
 							if ( group.parent.style.top && group.parent.style.left ) {
 								group.offset.y = _this.pxToNumber( group.parent.style.top );
@@ -1346,7 +1340,6 @@ if ( !AmCharts.translations[ "export" ][ "en" ] ) {
 
 						// REGULAR CHARTS; SVG OFFSET
 					} else {
-
 						// POSITION; ABSOLUTE
 						if ( group.parent.style.top && group.parent.style.left ) {
 							group.offset.y = _this.pxToNumber( group.parent.style.top );
@@ -1354,7 +1347,6 @@ if ( !AmCharts.translations[ "export" ][ "en" ] ) {
 
 							// POSITION; RELATIVE
 						} else {
-
 							// EXTERNAL LEGEND
 							if ( group.legend ) {
 								if ( group.legend.position == "left" ) {
@@ -1397,10 +1389,8 @@ if ( !AmCharts.translations[ "export" ][ "en" ] ) {
 							};
 
 							for ( i1 = 0; i1 < g.paths.length; i1++ ) {
-
 								// OPACITY; TODO: DISTINGUISH OPACITY TYPES
 								if ( g.paths[ i1 ] ) {
-
 									// CHECK ORIGIN; REMOVE TAINTED
 									if ( cfg.removeImages && _this.isTainted( g.paths[ i1 ][ "xlink:href" ] ) ) {
 										g.paths.splice( i1, 1 );
@@ -1409,7 +1399,6 @@ if ( !AmCharts.translations[ "export" ][ "en" ] ) {
 
 									// SET OPACITY
 									if ( g.paths[ i1 ].fill instanceof Object ) {
-
 										// MISINTERPRETATION OF FABRIC
 										if ( g.paths[ i1 ].fill.type == "radial" ) {
 											g.paths[ i1 ].fill.coords.r2 = g.paths[ i1 ].fill.coords.r1 * -1;
@@ -1569,7 +1558,6 @@ if ( !AmCharts.translations[ "export" ][ "en" ] ) {
 
 							// WALKTHROUGH ELEMENTS
 						} else {
-
 							// TRANSPORT FILL/STROKE OPACITY
 							var attrs = [ "fill", "stroke" ];
 							for ( i1 = 0; i1 < attrs.length; i1++ ) {
@@ -1846,13 +1834,12 @@ if ( !AmCharts.translations[ "export" ][ "en" ] ) {
 				var buffer = [];
 
 				function enchant( value, column ) {
-
 					// STRING
 					if ( typeof value === "string" ) {
 						value = value;
 					}
 
-					// WRAP IN QUOTES				
+					// WRAP IN QUOTES
 					if ( typeof value === "string" ) {
 						if ( cfg.escape ) {
 							value = value.replace( '"', '""' );
@@ -2172,7 +2159,6 @@ if ( !AmCharts.translations[ "export" ][ "en" ] ) {
 
 				// HANDLE FIELDS
 				function addField( field, title, type ) {
-
 					function checkExistance( field, type ) {
 						if ( cfg.dataFields.indexOf( field ) != -1 ) {
 							return checkExistance( [ field, ".", type ].join( "" ) );
@@ -2348,7 +2334,6 @@ if ( !AmCharts.translations[ "export" ][ "en" ] ) {
 
 							// PROCESS CATEGORY
 							if ( cfg.dateFields.indexOf( dataField ) != -1 ) {
-
 								// CONVERT DATESTRING TO DATE OBJECT
 								if ( cfg.dataDateFormat && ( value instanceof String || typeof value == "string" ) ) {
 									value = AmCharts.stringToDate( value, cfg.dataDateFormat );
@@ -2364,7 +2349,6 @@ if ( !AmCharts.translations[ "export" ][ "en" ] ) {
 										if ( value < chart.startDate || value > chart.endDate ) {
 											skip = true;
 										}
-
 									} else if ( i1 < chart.startIndex || i1 > chart.endIndex ) {
 										skip = true;
 									}
@@ -2477,13 +2461,11 @@ if ( !AmCharts.translations[ "export" ][ "en" ] ) {
 									tmp.icon = url;
 									tmp.ignore = io;
 									tmp[ "class" ] = "export-drawing-shape";
-
 								} else if ( type == "colors" ) {
 									tmp.style = "background-color: " + items[ i2 ];
 									tmp.action = "change";
 									tmp.color = items[ i2 ];
 									tmp[ "class" ] = "export-drawing-color";
-
 								} else if ( type == "widths" ) {
 									tmp.action = "change";
 									tmp.width = items[ i2 ];
@@ -2552,7 +2534,6 @@ if ( !AmCharts.translations[ "export" ][ "en" ] ) {
 													}
 												} );
 											} )
-
 										} else if ( this[ "to" + item.format ] ) {
 											this[ "to" + item.format ]( item, function( data ) {
 												this.download( data, item.mimeType, [ item.fileName, item.extension ].join( "." ) );
@@ -2850,7 +2831,6 @@ if ( !AmCharts.translations[ "export" ][ "en" ] ) {
 						}
 					}
 				}, AmCharts.updateRate );
-
 			},
 
 			/**
@@ -2997,5 +2977,4 @@ if ( !AmCharts.translations[ "export" ][ "en" ] ) {
  */
 AmCharts.addInitHandler( function( chart ) {
 	new AmCharts["export"]( chart );
-
 }, [ "pie", "serial", "xy", "funnel", "radar", "gauge", "stock", "map", "gantt" ] );

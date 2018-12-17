@@ -58,9 +58,9 @@
       <Project>{7c42d2be-a13b-496f-b754-b741dfdd32bb}</Project>
       <Name>Mezun_Portali.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Mezun_Portali.Entities\Mezun_Portali.Entities.csproj">
-      <Project>{ee2bbf7f-9052-44ed-bbc5-0baba501790d}</Project>
-      <Name>Mezun_Portali.Entities</Name>
+    <ProjectReference Include="..\Mezun_Portali.Ent\Mezun_Portali.Ent.csproj">
+      <Project>{bbaf6f3c-1a64-4392-acdd-823602e17ca4}</Project>
+      <Name>Mezun_Portali.Ent</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

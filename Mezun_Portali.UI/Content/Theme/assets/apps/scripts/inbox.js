@@ -1,5 +1,4 @@
 var AppInbox = function () {
-
     var content = $('.inbox-content');
     var listListing = '';
 
@@ -21,7 +20,7 @@ var AppInbox = function () {
             cache: false,
             url: url,
             dataType: "html",
-            success: function(res) 
+            success: function(res)
             {
                 toggleButton(el);
 
@@ -65,15 +64,15 @@ var AppInbox = function () {
 
         toggleButton(el);
 
-        var message_id = el.parent('tr').attr("data-messageid");  
-        
+        var message_id = el.parent('tr').attr("data-messageid");
+
         $.ajax({
             type: "GET",
             cache: false,
             url: url,
             dataType: "html",
             data: {'message_id': message_id},
-            success: function(res) 
+            success: function(res)
             {
                 App.unblockUI(content);
 
@@ -102,7 +101,6 @@ var AppInbox = function () {
     }
 
     var initFileupload = function () {
-
         $('#fileupload').fileupload({
             // Uncomment the following to send cross-domain cookies:
             //xhrFields: {withCredentials: true},
@@ -141,7 +139,7 @@ var AppInbox = function () {
             cache: false,
             url: url,
             dataType: "html",
-            success: function(res) 
+            success: function(res)
             {
                 App.unblockUI(content);
                 toggleButton(el);
@@ -168,7 +166,7 @@ var AppInbox = function () {
     var loadReply = function (el) {
         var messageid = $(el).attr("data-messageid");
         var url = 'app_inbox_reply.html';
-        
+
         App.blockUI({
             target: content,
             overlayColor: 'none',
@@ -183,7 +181,7 @@ var AppInbox = function () {
             cache: false,
             url: url,
             dataType: "html",
-            success: function(res) 
+            success: function(res)
             {
                 App.unblockUI(content);
                 toggleButton(el);
@@ -220,7 +218,6 @@ var AppInbox = function () {
     }
 
     var handleBCCInput = function () {
-
         var the = $('.inbox-compose .mail-to .inbox-bcc');
         var input = $('.inbox-compose .input-bcc');
         the.hide();
@@ -245,7 +242,6 @@ var AppInbox = function () {
     return {
         //main function to initiate the module
         init: function () {
-
             // handle compose btn click
             $('.inbox').on('click', '.compose-btn', function () {
                 loadCompose($(this));
@@ -290,11 +286,8 @@ var AppInbox = function () {
             } else {
                $('.inbox-nav > li:first > a').click();
             }
-
         }
-
     };
-
 }();
 
 jQuery(document).ready(function() {

@@ -1,4 +1,4 @@
-namespace Mezun_Portali.Entities
+namespace Mezun_Portali.Ent
 {
     using System;
     using System.Collections.Generic;

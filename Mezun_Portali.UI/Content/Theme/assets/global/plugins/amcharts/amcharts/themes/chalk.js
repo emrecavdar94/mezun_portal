@@ -1,5 +1,4 @@
 AmCharts.themes.chalk = {
-
 	themeName: "chalk",
 
 	AmChart: {
@@ -60,7 +59,6 @@ AmCharts.themes.chalk = {
 	AmGraph: {
 		lineAlpha: 0.8
 	},
-
 
 	GaugeArrow: {
 		color: "#FFFFFF",
@@ -139,7 +137,6 @@ AmCharts.themes.chalk = {
 		borderAlpha: 0.8
 	},
 
-
 	// the defaults below are set using CSS syntax, you can use any existing css property
 	// if you don't use Stock chart, you can delete lines below
 	PeriodSelector: {
@@ -209,5 +206,4 @@ AmCharts.themes.chalk = {
 		border: "1px solid rgba(255, 255, 255, .15)",
 		outline: "none"
 	}
-
 };

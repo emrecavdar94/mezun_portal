@@ -41,7 +41,6 @@ AmCharts.translations.dataLoader = {};
  * Set init handler
  */
 AmCharts.addInitHandler( function( chart ) {
-
   /**
    * Check if dataLoader is set (initialize it)
    */
@@ -88,15 +87,12 @@ AmCharts.addInitHandler( function( chart ) {
    * Create a function that can be used to load data (or reload via API)
    */
   l.loadData = function() {
-
     /**
      * Load all files in a row
      */
     if ( 'stock' === chart.type ) {
-
       // delay this a little bit so the chart has the chance to build itself
       setTimeout( function() {
-
         // preserve animation
         if ( 0 > chart.panelsSettings.startDuration ) {
           l.startDuration = chart.panelsSettings.startDuration;
@@ -109,27 +105,20 @@ AmCharts.addInitHandler( function( chart ) {
 
           // load data
           if ( undefined !== ds.dataLoader && undefined !== ds.dataLoader.url ) {
-
             ds.dataProvider = [];
             applyDefaults( ds.dataLoader );
             loadFile( ds.dataLoader.url, ds, ds.dataLoader, 'dataProvider' );
-
           }
 
           // load events data
           if ( undefined !== ds.eventDataLoader && undefined !== ds.eventDataLoader.url ) {
-
             ds.events = [];
             applyDefaults( ds.eventDataLoader );
             loadFile( ds.eventDataLoader.url, ds, ds.eventDataLoader, 'stockEvents' );
-
           }
         }
-
       }, 100 );
-
     } else {
-
       applyDefaults( l );
 
       if ( undefined === l.url )
@@ -154,9 +143,7 @@ AmCharts.addInitHandler( function( chart ) {
 
         loadFile( l.url, chart, l, 'dataProvider' );
       }
-
     }
-
   };
 
   /**
@@ -168,7 +155,6 @@ AmCharts.addInitHandler( function( chart ) {
    * Loads a file and determines correct parsing mechanism for it
    */
   function loadFile( url, holder, options, providerKey ) {
-
     // set default providerKey
     if ( undefined === providerKey )
       providerKey = 'dataProvider';
@@ -182,13 +168,11 @@ AmCharts.addInitHandler( function( chart ) {
 
     // load the file
     AmCharts.loadFile( url, options, function( response ) {
-
       // error?
       if ( false === response ) {
         callFunction( options.error, options, chart );
         raiseError( AmCharts.__( 'Error loading the file', chart.language ) + ': ' + url, false, options );
       } else {
-
         // determine the format
         if ( undefined === options.format ) {
           // TODO
@@ -200,7 +184,6 @@ AmCharts.addInitHandler( function( chart ) {
 
         // invoke parsing function
         switch ( options.format ) {
-
           case 'json':
 
             holder[ providerKey ] = AmCharts.parseJSON( response );
@@ -244,17 +227,14 @@ AmCharts.addInitHandler( function( chart ) {
 
         // we done?
         if ( 0 === l.remaining ) {
-
           // callback
           callFunction( options.complete, chart );
 
           // take in the new data
           if ( options.async ) {
-
             if ( 'map' === chart.type )
               chart.validateNow( true );
             else {
-
               // take in new data
               chart.validateData();
 
@@ -289,19 +269,14 @@ AmCharts.addInitHandler( function( chart ) {
 
         // schedule another load if necessary
         if ( options.reload ) {
-
           if ( options.timeout )
             clearTimeout( options.timeout );
 
           options.timeout = setTimeout( loadFile, 1000 * options.reload, url, holder, options );
           options.reloading = true;
-
         }
-
       }
-
     } );
-
   }
 
   /**
@@ -354,21 +329,18 @@ AmCharts.addInitHandler( function( chart ) {
    * Raises an internal error (writes it out to console)
    */
   function raiseError( msg, error, options ) {
-
     if ( options.showErrors )
       showCurtain( msg, options.noStyles );
     else {
       removeCurtain();
       console.log( msg );
     }
-
   }
 
   /**
    * Shows curtain over chart area
    */
   function showCurtain( msg, noStyles ) {
-
     // remove previous curtain if there is one
     removeCurtain();
 
@@ -416,7 +388,6 @@ AmCharts.addInitHandler( function( chart ) {
     }
 
     l.curtain = undefined;
-
   }
 
   /**
@@ -426,9 +397,7 @@ AmCharts.addInitHandler( function( chart ) {
     if ( 'function' === typeof func )
       func.call( l, param1, param2, param3 );
   }
-
 }, [ 'pie', 'serial', 'xy', 'funnel', 'radar', 'gauge', 'gantt', 'stock', 'map' ] );
-
 
 /**
  * Returns prompt in a chart language (set by chart.language) if it is
@@ -447,7 +416,6 @@ if ( undefined === AmCharts.__ ) {
  * Loads a file from url and calls function handler with the result
  */
 AmCharts.loadFile = function( url, options, handler ) {
-
   // create the request
   var request;
   if ( window.XMLHttpRequest ) {
@@ -475,13 +443,11 @@ AmCharts.loadFile = function( url, options, handler ) {
 
   // set handler for data if async loading
   request.onreadystatechange = function() {
-
     if ( 4 === request.readyState && 404 === request.status )
       handler.call( this, false );
 
     else if ( 4 === request.readyState && 200 === request.status )
       handler.call( this, request.responseText );
-
   };
 
   // load the file
@@ -490,7 +456,6 @@ AmCharts.loadFile = function( url, options, handler ) {
   } catch ( e ) {
     handler.call( this, false );
   }
-
 };
 
 /**
@@ -511,7 +476,6 @@ AmCharts.parseJSON = function( response ) {
  * Prases CSV string into an object
  */
 AmCharts.parseCSV = function( response, options ) {
-
   // parse CSV into array
   var data = AmCharts.CSVToArray( response, options.delimiter );
 
@@ -583,7 +547,6 @@ AmCharts.CSVToArray = function( strData, strDelimiter ) {
     "gi"
   );
 
-
   // Create an array to hold our data. Give the array
   // a default empty first row.
   var arrData = [
@@ -594,11 +557,9 @@ AmCharts.CSVToArray = function( strData, strDelimiter ) {
   // matching groups.
   var arrMatches = null;
 
-
   // Keep looping over the regular expression matches
   // until we can no longer find a match.
   while ( ( arrMatches = objPattern.exec( strData ) ) ) {
-
     // Get the delimiter that was found.
     var strMatchedDelimiter = arrMatches[ 1 ];
 
@@ -610,34 +571,26 @@ AmCharts.CSVToArray = function( strData, strDelimiter ) {
       strMatchedDelimiter.length &&
       ( strMatchedDelimiter !== strDelimiter )
     ) {
-
       // Since we have reached a new row of data,
       // add an empty row to our data array.
       arrData.push( [] );
-
     }
-
 
     // Now that we have our delimiter out of the way,
     // let's check to see which kind of value we
     // captured (quoted or unquoted).
     var strMatchedValue;
     if ( arrMatches[ 2 ] ) {
-
       // We found a quoted value. When we capture
       // this value, unescape any double quotes.
       strMatchedValue = arrMatches[ 2 ].replace(
         new RegExp( "\"\"", "g" ),
         "\""
       );
-
     } else {
-
       // We found a non-quoted value.
       strMatchedValue = arrMatches[ 3 ];
-
     }
-
 
     // Now that we have our value string, let's add
     // it to the data array.

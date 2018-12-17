@@ -1419,7 +1419,6 @@ var utf8read = function utf8reada(orig) {
     return out;
 };
 
-
 if(has_buf) {
     var utf8readb = function utf8readb(data) {
         var out = new Buffer(2*data.length), w, i, j = 1, k = 0, ww=0, c;
@@ -1800,7 +1799,6 @@ var make_offcrypto = function(O, _crypto) {
 };
 make_offcrypto(OFFCRYPTO, typeof crypto !== "undefined" ? crypto : undefined);
 
-
 /* [MS-XLSB] 2.5.143 */
 function parse_StrRun(data, length) {
     return { ich: data.read_shift(2), ifnt: data.read_shift(2) };
@@ -1850,7 +1848,6 @@ function write_XLSBCell(cell, o) {
     return o;
 }
 
-
 /* [MS-XLSB] 2.5.21 */
 function parse_XLSBCodeName (data, length) { return parse_XLWideString(data, length); }
 
@@ -1881,7 +1878,6 @@ function write_XLWideString(data, o) {
 /* [MS-XLSB] 2.5.114 */
 var parse_RelID = parse_XLNullableWideString;
 var write_RelID = write_XLNullableWideString;
-
 
 /* [MS-XLSB] 2.5.122 */
 /* [MS-XLS] 2.5.217 */
@@ -2604,7 +2600,6 @@ function write_core_props(cp, opts) {
     var o = [XML_HEADER, CORE_PROPS_XML_ROOT], p = {};
     if(!cp) return o.join("");
 
-
     if(cp.CreatedDate != null) cp_doit("dcterms:created", typeof cp.CreatedDate === "string" ? cp.CreatedDate : write_w3cdtf(cp.CreatedDate, opts.WTF), {"xsi:type":"dcterms:W3CDTF"}, o, p);
     if(cp.ModifiedDate != null) cp_doit("dcterms:modified", typeof cp.ModifiedDate === "string" ? cp.ModifiedDate : write_w3cdtf(cp.ModifiedDate, opts.WTF), {"xsi:type":"dcterms:W3CDTF"}, o, p);
 
@@ -2787,7 +2782,6 @@ function parse_lpwstr(blob, type, pad) {
     if(pad) blob.l += (4 - ((str.length+1) & 3)) & 3;
     return str;
 }
-
 
 /* [MS-OSHARED] 2.3.3.1.11 VtString */
 /* [MS-OSHARED] 2.3.3.1.12 VtUnalignedString */
@@ -3036,7 +3030,6 @@ function parse_PropertySetStream(file, PIDSI) {
     return rval;
 }
 
-
 function parsenoop2(blob, length) { blob.read_shift(length); return null; }
 
 function parslurp(blob, length, cb) {
@@ -3205,7 +3198,6 @@ function parse_LongRGBA(blob, length) { var r = blob.read_shift(1), g = blob.rea
 /* 2.5.177 LongRGB */
 function parse_LongRGB(blob, length) { var x = parse_LongRGBA(blob, length); x[3] = 0; return x; }
 
-
 /* --- MS-XLS --- */
 
 /* 2.5.19 */
@@ -3223,8 +3215,6 @@ function parse_frtHeader(blob) {
     blob.l += 8;
     return {type: rt, flags: flags};
 }
-
-
 
 function parse_OptXLUnicodeString(blob, length, opts) { return length === 0 ? "" : parse_XLUnicodeString2(blob, length, opts); }
 
@@ -3360,7 +3350,6 @@ function parse_BOF(blob, length) {
     return o;
 }
 
-
 /* 2.4.146 */
 function parse_InterfaceHdr(blob, length) {
     if(length === 0) return 0x04b0;
@@ -3368,7 +3357,6 @@ function parse_InterfaceHdr(blob, length) {
     if((q=blob.read_shift(2))!==0x04b0) throw 'InterfaceHdr codePage ' + q;
     return 0x04b0;
 }
-
 
 /* 2.4.349 */
 function parse_WriteAccess(blob, length, opts) {
@@ -3416,7 +3404,6 @@ function parse_ExtSST(blob, length) {
     return extsst;
 }
 
-
 /* 2.4.221 TODO*/
 function parse_Row(blob, length) {
     var rw = blob.read_shift(2), col = blob.read_shift(2), Col = blob.read_shift(2), rht = blob.read_shift(2);
@@ -3427,7 +3414,6 @@ function parse_Row(blob, length) {
     return {r:rw, c:col, cnt:Col-col};
 }
 
-
 /* 2.4.125 */
 function parse_ForceFullCalculation(blob, length) {
     var header = parse_frtHeader(blob);
@@ -3436,10 +3422,7 @@ function parse_ForceFullCalculation(blob, length) {
     return fullcalc !== 0x0;
 }
 
-
 var parse_CompressPictures = parsenoop2; /* 2.4.55 Not interesting */
-
-
 
 /* 2.4.215 rt */
 function parse_RecalcId(blob, length) {
@@ -3782,14 +3765,12 @@ function parse_XFCRC(blob, length) {
     return o;
 }
 
-
 var parse_Style = parsenoop;
 var parse_StyleExt = parsenoop;
 
 var parse_ColInfo = parsenoop;
 
 var parse_Window2 = parsenoop;
-
 
 var parse_Backup = parsebool; /* 2.4.14 */
 var parse_Blank = parse_XLSCell; /* 2.4.20 Just the cell */
@@ -3840,7 +3821,6 @@ var parse_UsesELFs = parsebool; /* 2.4.337 -- should be 0 */
 var parse_VCenter = parsebool; /* 2.4.342 */
 var parse_WinProtect = parsebool; /* 2.4.347 */
 var parse_WriteProtect = parsenoop; /* 2.4.350 empty record */
-
 
 /* ---- */
 var parse_VerticalPageBreaks = parsenoop;
@@ -4544,7 +4524,6 @@ function parse_FilePass(blob, length, opts) {
     else parse_XORObfuscation(blob, length-2, opts, o);
     return o;
 }
-
 
 function hex2RGB(h) {
     var o = h.substr(h[0]==="#"?1:0,6);
@@ -5482,7 +5461,6 @@ function parse_PtgRef3d(blob, length) {
     return [type, ixti, loc];
 }
 
-
 /* 2.5.198.62 TODO */
 function parse_PtgFunc(blob, length) {
     var ptg = blob[blob.l] & 0x1F;
@@ -5602,7 +5580,6 @@ function parse_PtgMemFunc(blob, length) {
     var cce = blob.read_shift(2);
     return [type, cce];
 }
-
 
 /* 2.5.198.86 */
 function parse_PtgRefErr(blob, length) {
@@ -5954,7 +5931,6 @@ function stringify_formula(formula, range, cell, supbooks, opts) {
             case 'PtgAttrGoto': break;
             /* 2.5.198.36 */
             case 'PtgAttrIf': break;
-
 
             /* 2.5.198.84 */
             case 'PtgRef':
@@ -7596,7 +7572,6 @@ function write_BrtCellBlank(cell, val, o) {
     if(o == null) o = new_buf(8);
     return write_XLSBCell(val, o);
 }
-
 
 /* [MS-XLSB] 2.4.304 BrtCellBool */
 function parse_BrtCellBool(data, length) {
@@ -9646,24 +9621,18 @@ function parse_workbook(blob, options) {
                     //console.log("Zoom Level:", val[0]/val[1],val);
                 } break;
                 case 'SheetExt': {
-
                 } break;
                 case 'SheetExtOptional': {
-
                 } break;
 
                 /* VBA */
                 case 'ObNoMacros': {
-
                 } break;
                 case 'ObProj': {
-
                 } break;
                 case 'CodeName': {
-
                 } break;
                 case 'GUIDTypeLib': {
-
                 } break;
 
                 case 'WOpt': break; // TODO: WTF?
@@ -11079,7 +11048,6 @@ var XLSRecordEnum = {
     0x0000: {}
 };
 
-
 /* Helper function to call out to ODS parser */
 function parse_ods(zip, opts) {
     if(typeof module !== "undefined" && typeof require !== 'undefined' && typeof ODS === 'undefined') ODS = require('./od' + 's');
@@ -11115,7 +11083,6 @@ var fix_read_opts = fix_opts_func([
     ['password',''], /* password */
     ['WTF', false] /* WTF mode (throws errors) */
 ]);
-
 
 var fix_write_opts = fix_opts_func([
     ['cellDates', false], /* write date cells with type `d` */

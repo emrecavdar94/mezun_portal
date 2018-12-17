@@ -1,5 +1,4 @@
 AmCharts.themes.dark = {
-
 	themeName: "dark",
 
 	AmChart: {
@@ -63,7 +62,6 @@ AmCharts.themes.dark = {
 	AmGraph: {
 		lineAlpha: 0.9
 	},
-
 
 	GaugeArrow: {
 		color: "#FFFFFF",
@@ -191,5 +189,4 @@ AmCharts.themes.dark = {
 		border: "1px solid rgba(255, 255, 255, .15)",
 		outline: "none"
 	}
-
 };

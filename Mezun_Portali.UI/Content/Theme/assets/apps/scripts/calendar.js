@@ -1,5 +1,4 @@
 var AppCalendar = function() {
-
     return {
         //main function to initiate the module
         init: function() {
@@ -7,7 +6,6 @@ var AppCalendar = function() {
         },
 
         initCalendar: function() {
-
             if (!jQuery().fullCalendar) {
                 return;
             }
@@ -97,12 +95,11 @@ var AppCalendar = function() {
             $('#calendar').fullCalendar('destroy'); // destroy the calendar
             $('#calendar').fullCalendar({ //re-initialize the calendar
                 header: h,
-                defaultView: 'month', // change default view with available options from http://arshaw.com/fullcalendar/docs/views/Available_Views/ 
+                defaultView: 'month', // change default view with available options from http://arshaw.com/fullcalendar/docs/views/Available_Views/
                 slotMinutes: 15,
                 editable: true,
                 droppable: true, // this allows things to be dropped onto the calendar !!!
                 drop: function(date, allDay) { // this function is called when something is dropped
-
                     // retrieve the dropped element's stored Event Object
                     var originalEventObject = $(this).data('eventObject');
                     // we need to copy it, so that multiple events don't have a reference to the same object
@@ -166,13 +163,10 @@ var AppCalendar = function() {
                     url: 'http://google.com/',
                 }]
             });
-
         }
-
     };
-
 }();
 
-jQuery(document).ready(function() {    
-   AppCalendar.init(); 
+jQuery(document).ready(function() {
+   AppCalendar.init();
 });

@@ -4,7 +4,6 @@
 
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
-
 /******/ 		// Check if module is in cache
 /******/ 		if(installedModules[moduleId])
 /******/ 			return installedModules[moduleId].exports;
@@ -26,7 +25,6 @@
 /******/ 		return module.exports;
 /******/ 	}
 
-
 /******/ 	// expose the modules object (__webpack_modules__)
 /******/ 	__webpack_require__.m = modules;
 
@@ -43,14 +41,12 @@
 /******/ ([
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
-
 	/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["pdfMake"] = __webpack_require__(1);
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
-
 	/* WEBPACK VAR INJECTION */(function(Buffer) {/* jslint node: true */
 	/* jslint browser: true */
 	/* global BlobBuilder */
@@ -114,7 +110,6 @@
 		}
 	};
 
-
 	Document.prototype.print = function() {
 	  this.getDataUrl(function(dataUrl) {
 	    var iFrame = document.createElement('iframe');
@@ -146,7 +141,7 @@
 	           blob = new Blob([result], { type: 'application/pdf' });
 	       }
 	       catch (e) {
-	           // Old browser which can't handle it without making it an byte array (ie10) 
+	           // Old browser which can't handle it without making it an byte array (ie10)
 	           if (e.name == "InvalidStateError") {
 	               var byteArray = new Uint8Array(result);
 	               blob = new Blob([byteArray.buffer], { type: 'application/pdf' });
@@ -196,7 +191,6 @@
 /***/ },
 /* 2 */
 /***/ function(module, exports, __webpack_require__) {
-
 	/* WEBPACK VAR INJECTION */(function(Buffer) {/*!
 	 * The buffer module from node.js, for the browser.
 	 *
@@ -1736,7 +1730,6 @@
 /***/ },
 /* 3 */
 /***/ function(module, exports, __webpack_require__) {
-
 	var lookup = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
 
 	;(function (exports) {
@@ -1862,11 +1855,9 @@
 		exports.fromByteArray = uint8ToBase64
 	}( false ? (this.base64js = {}) : exports))
 
-
 /***/ },
 /* 4 */
 /***/ function(module, exports) {
-
 	exports.read = function (buffer, offset, isLE, mLen, nBytes) {
 	  var e, m
 	  var eLen = nBytes * 8 - mLen - 1
@@ -1952,12 +1943,9 @@
 	  buffer[offset + i - d] |= s * 128
 	}
 
-
 /***/ },
 /* 5 */
 /***/ function(module, exports) {
-
-	
 	/**
 	 * isArray
 	 */
@@ -1991,11 +1979,9 @@
 	  return !! val && '[object Array]' == str.call(val);
 	};
 
-
 /***/ },
 /* 6 */
 /***/ function(module, exports, __webpack_require__) {
-
 	/* jslint node: true */
 	/* global window */
 	'use strict';
@@ -2253,7 +2239,6 @@
 			pdfKitDoc.save();
 			pdfKitDoc.transform(1, 0, 0, -1, 0, pdfKitDoc.page.height);
 
-
 	    var encoded = inline.font.encode(inline.text);
 			pdfKitDoc.addContent('BT');
 
@@ -2267,7 +2252,6 @@
 		}
 
 		textDecorator.drawDecorations(line, x, y, pdfKitDoc);
-
 	}
 
 	function renderWatermark(page, pdfKitDoc){
@@ -2354,15 +2338,12 @@
 
 	module.exports = PdfPrinter;
 
-
 	/* temporary browser extension */
 	PdfPrinter.prototype.fs = __webpack_require__(44);
-
 
 /***/ },
 /* 7 */
 /***/ function(module, exports, __webpack_require__) {
-
 	var __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(module, global) {/**
 	 * @license
 	 * lodash 3.1.0 (Custom Build) <https://lodash.com/>
@@ -2373,7 +2354,6 @@
 	 * Available under MIT license <https://lodash.com/license>
 	 */
 	;(function() {
-
 	  /** Used as a safe reference for `undefined` in pre-ES5 environments. */
 	  var undefined;
 
@@ -3262,7 +3242,6 @@
 	    var support = lodash.support = {};
 
 	    (function(x) {
-
 	      /**
 	       * Detect if functions can be decompiled by `Function#toString`
 	       * (all but Firefox OS certified apps, older Opera mobile browsers, and
@@ -3322,7 +3301,6 @@
 	     * @type Object
 	     */
 	    lodash.templateSettings = {
-
 	      /**
 	       * Used to detect `data` property values to be HTML-escaped.
 	       *
@@ -3362,7 +3340,6 @@
 	       * @type Object
 	       */
 	      'imports': {
-
 	        /**
 	         * A reference to the `lodash` function.
 	         *
@@ -13193,7 +13170,6 @@
 /***/ },
 /* 8 */
 /***/ function(module, exports) {
-
 	module.exports = function(module) {
 		if(!module.webpackPolyfill) {
 			module.deprecate = function() {};
@@ -13205,11 +13181,9 @@
 		return module;
 	}
 
-
 /***/ },
 /* 9 */
 /***/ function(module, exports, __webpack_require__) {
-
 	/* jslint node: true */
 	'use strict';
 
@@ -13274,11 +13248,9 @@
 
 	module.exports = FontProvider;
 
-
 /***/ },
 /* 10 */
 /***/ function(module, exports, __webpack_require__) {
-
 	/* jslint node: true */
 	'use strict';
 
@@ -13305,13 +13277,11 @@
 	      return font.decender;
 	    }
 	  });
-
 	}
 	// private
 
 	FontWrapper.prototype.getFont = function(index){
 		if(!this.pdfFonts[index]){
-
 			var pseudoName = this.name + index;
 
 			if(this.postscriptName){
@@ -13355,7 +13325,6 @@
 			throw new Error('Inline has more than '+ self.MAX_CHAR_TYPES + ': ' + text + ' different character types and therefore cannot be properly embedded into pdf.');
 		}
 
-
 	  var characterFitInFontWithIndex = function (charCatalogue) {
 	    return _.uniq(charCatalogue.concat(charTypesInInline)).length <= self.MAX_CHAR_TYPES;
 	  };
@@ -13386,14 +13355,11 @@
 	  };
 	};
 
-
 	module.exports = FontWrapper;
-
 
 /***/ },
 /* 11 */
 /***/ function(module, exports, __webpack_require__) {
-
 	/* jslint node: true */
 	'use strict';
 
@@ -13448,9 +13414,7 @@
 	 * @return {Array} an array of pages
 	 */
 	LayoutBuilder.prototype.layoutDocument = function (docStructure, fontProvider, styleDictionary, defaultStyle, background, header, footer, images, watermark, pageBreakBeforeFct) {
-
 	  function addPageBreaksIfNecessary(linearNodeList, pages) {
-
 			if(!isFunction(pageBreakBeforeFct)){
 				return false;
 			}
@@ -13503,7 +13467,6 @@
 
 	  this.docMeasure = new DocMeasure(fontProvider, styleDictionary, defaultStyle, this.imageMeasure, this.tableLayouts, images);
 
-
 	  function resetXYs(result) {
 	    _.each(result.linearNodeList, function (node) {
 	      node.resetXY();
@@ -13520,7 +13483,6 @@
 	};
 
 	LayoutBuilder.prototype.tryLayoutDocument = function (docStructure, fontProvider, styleDictionary, defaultStyle, background, header, footer, images, watermark, pageBreakBeforeFct) {
-
 	  this.linearNodeList = [];
 	  docStructure = this.docMeasure.measureDocument(docStructure);
 
@@ -13541,7 +13503,6 @@
 
 	  return {pages: this.writer.context().pages, linearNodeList: this.linearNodeList};
 	};
-
 
 	LayoutBuilder.prototype.addBackground = function(background) {
 	    var backgroundGetter = isFunction(background) ? background : function() { return background; };
@@ -13773,7 +13734,6 @@
 		var result = this.processRow(columns, columns, gaps);
 	    addAll(columnNode.positions, result.positions);
 
-
 		function gapArray(gap) {
 			if (!gap) return null;
 
@@ -13979,11 +13939,9 @@
 
 	module.exports = LayoutBuilder;
 
-
 /***/ },
 /* 12 */
 /***/ function(module, exports) {
-
 	/* jslint node: true */
 	'use strict';
 
@@ -14035,11 +13993,9 @@
 
 	module.exports = TraversalTracker;
 
-
 /***/ },
 /* 13 */
 /***/ function(module, exports, __webpack_require__) {
-
 	/* jslint node: true */
 	'use strict';
 
@@ -14121,7 +14077,6 @@
 		}
 
 		function getNodeMargin() {
-
 			function processSingleMargins(node, currentMargin){
 				if (node.marginLeft || node.marginTop || node.marginRight || node.marginBottom) {
 					return [
@@ -14173,7 +14128,7 @@
 					margin = convertMargin(flattenedStyleArray.margin);
 				}
 			}
-			
+
 			margin = processSingleMargins(node, margin);
 
 			if(node.margin){
@@ -14539,11 +14494,9 @@
 
 	module.exports = DocMeasure;
 
-
 /***/ },
 /* 14 */
 /***/ function(module, exports) {
-
 	/* jslint node: true */
 	'use strict';
 
@@ -14802,14 +14755,11 @@
 	TextTools.prototype.measure = measure;
 	// */
 
-
 	module.exports = TextTools;
-
 
 /***/ },
 /* 15 */
 /***/ function(module, exports) {
-
 	/* jslint node: true */
 	'use strict';
 
@@ -14978,11 +14928,9 @@
 
 	module.exports = StyleContextStack;
 
-
 /***/ },
 /* 16 */
 /***/ function(module, exports) {
-
 	/* jslint node: true */
 	'use strict';
 
@@ -15119,11 +15067,9 @@
 		isStarColumn: isStarColumn
 	};
 
-
 /***/ },
 /* 17 */
 /***/ function(module, exports) {
-
 	/* jslint node: true */
 	'use strict';
 
@@ -15179,7 +15125,6 @@
 		return functionToCheck && getType.toString.call(functionToCheck) === '[object Function]';
 	}
 
-
 	module.exports = {
 		pack: pack,
 		fontStringify: fontStringify,
@@ -15187,11 +15132,9 @@
 		isFunction: isFunction
 	};
 
-
 /***/ },
 /* 18 */
 /***/ function(module, exports) {
-
 	/* jslint node: true */
 	'use strict';
 	/*jshint -W004 */
@@ -15202,7 +15145,6 @@
 	 * recognize the public domain the terms of Creative Commons CC0 license
 	 * apply. In the other words, you can always do what you want.
 	 */
-
 
 	// per-version information (cf. JIS X 0510:2004 pp. 30--36, 71)
 	//
@@ -15876,7 +15818,6 @@
 			return generate(data, ver, mode, ecclevel, mask);
 		}
 
-
 	// options
 	// - modulesize: a number. this is a size of each modules in pixels, and
 	//   defaults to 5px.
@@ -15885,7 +15826,6 @@
 	//   modules, so it is better not to alter this value unless you know what
 	//   you're doing.
 	function buildCanvas(data, options) {
-	   
 	    var canvas = [];
 	    var background = data.background || '#fff';
 	    var foreground = data.foreground || '#000';
@@ -15894,12 +15834,12 @@
 		var n = matrix.length;
 		var modSize = Math.floor( options.fit ? options.fit/n : 5 );
 		var size = n * modSize;
-		
+
 	    canvas.push({
 	      type: 'rect',
 	      x: 0, y: 0, w: size, h: size, lineWidth: 0, color: background
 	    });
-	    
+
 		for (var i = 0; i < n; ++i) {
 			for (var j = 0; j < n; ++j) {
 	            if(matrix[i][j]) {
@@ -15915,12 +15855,11 @@
 	            }
 	        }
 	    }
-	    
+
 	    return {
 	        canvas: canvas,
 	        size: size
 	    };
-			
 	}
 
 	function measure(node) {
@@ -15937,7 +15876,6 @@
 /***/ },
 /* 19 */
 /***/ function(module, exports, __webpack_require__) {
-
 	/* jslint node: true */
 	'use strict';
 
@@ -16111,7 +16049,6 @@
 	}
 
 	var getPageSize = function (currentPage, newPageOrientation) {
-
 		newPageOrientation = pageOrientation(newPageOrientation, currentPage.pageSize.orientation);
 
 		if(newPageOrientation !== currentPage.pageSize.orientation) {
@@ -16127,9 +16064,7 @@
 				height: currentPage.pageSize.height
 			};
 		}
-
 	};
-
 
 	DocumentContext.prototype.moveToNextPage = function(pageOrientation) {
 		var nextPageIndex = this.page + 1;
@@ -16152,7 +16087,6 @@
 			y: this.y
 		};
 	};
-
 
 	DocumentContext.prototype.addPage = function(pageSize) {
 		var page = { items: [], pageSize: pageSize };
@@ -16210,11 +16144,9 @@
 
 	module.exports = DocumentContext;
 
-
 /***/ },
 /* 20 */
 /***/ function(module, exports, __webpack_require__) {
-
 	/* jslint node: true */
 	'use strict';
 
@@ -16275,9 +16207,8 @@
 	};
 
 	PageElementWriter.prototype.moveToNextPage = function(pageOrientation) {
-		
 		var nextPage = this.writer.context.moveToNextPage(pageOrientation);
-		
+
 	  if (nextPage.newPageCreated) {
 			this.repeatables.forEach(function(rep) {
 				this.writer.addFragment(rep, true);
@@ -16368,11 +16299,9 @@
 
 	module.exports = PageElementWriter;
 
-
 /***/ },
 /* 21 */
 /***/ function(module, exports, __webpack_require__) {
-
 	/* jslint node: true */
 	'use strict';
 
@@ -16632,14 +16561,11 @@
 		return (this.contextStack[0] || this.context).getCurrentPosition();
 	};
 
-
 	module.exports = ElementWriter;
-
 
 /***/ },
 /* 22 */
 /***/ function(module, exports) {
-
 	/* jslint node: true */
 	'use strict';
 
@@ -16710,11 +16636,9 @@
 
 	module.exports = Line;
 
-
 /***/ },
 /* 23 */
 /***/ function(module, exports, __webpack_require__) {
-
 	/* jslint node: true */
 	'use strict';
 
@@ -16787,7 +16711,6 @@
 	    var offset = self.rowPaddingTop + (!self.headerRows ? self.topLineWidth : 0);
 	    writer.context().moveDown(offset);
 	  };
-
 	};
 
 	TableProcessor.prototype.beginRow = function(rowIndex, writer) {
@@ -17021,13 +16944,10 @@
 
 	module.exports = TableProcessor;
 
-
 /***/ },
 /* 24 */
 /***/ function(module, exports, __webpack_require__) {
-
 	/* WEBPACK VAR INJECTION */(function(Buffer) {// Generated by CoffeeScript 1.7.1
-
 	/*
 	PDFDocument - represents an entire PDF document
 	By Devon Govett
@@ -17264,11 +17184,9 @@
 	    };
 
 	    return PDFDocument;
-
 	  })(stream.Readable);
 
 	  module.exports = PDFDocument;
-
 	}).call(this);
 
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2).Buffer))
@@ -17276,7 +17194,6 @@
 /***/ },
 /* 25 */
 /***/ function(module, exports, __webpack_require__) {
-
 	// Copyright Joyent, Inc. and other Node contributors.
 	//
 	// Permission is hereby granted, free of charge, to any person obtaining a
@@ -17312,8 +17229,6 @@
 
 	// Backwards-compat with node 0.4.x
 	Stream.Stream = Stream;
-
-
 
 	// old-style streams.  Note that the pipe method (the only relevant
 	// part of this class) is overridden in the Readable class.
@@ -17357,7 +17272,6 @@
 
 	    dest.end();
 	  }
-
 
 	  function onclose() {
 	    if (didOnEnd) return;
@@ -17405,11 +17319,9 @@
 	  return dest;
 	};
 
-
 /***/ },
 /* 26 */
 /***/ function(module, exports) {
-
 	// Copyright Joyent, Inc. and other Node contributors.
 	//
 	// Permission is hereby granted, free of charge, to any person obtaining a
@@ -17607,7 +17519,6 @@
 	    delete this._events[type];
 	    if (this._events.removeListener)
 	      this.emit('removeListener', type, listener);
-
 	  } else if (isObject(list)) {
 	    for (i = length; i-- > 0;) {
 	      if (list[i] === listener ||
@@ -17712,11 +17623,9 @@
 	  return arg === void 0;
 	}
 
-
 /***/ },
 /* 27 */
 /***/ function(module, exports) {
-
 	if (typeof Object.create === 'function') {
 	  // implementation from standard node.js 'util' module
 	  module.exports = function inherits(ctor, superCtor) {
@@ -17741,11 +17650,9 @@
 	  }
 	}
 
-
 /***/ },
 /* 28 */
 /***/ function(module, exports, __webpack_require__) {
-
 	exports = module.exports = __webpack_require__(29);
 	exports.Stream = __webpack_require__(25);
 	exports.Readable = exports;
@@ -17754,11 +17661,9 @@
 	exports.Transform = __webpack_require__(38);
 	exports.PassThrough = __webpack_require__(39);
 
-
 /***/ },
 /* 29 */
 /***/ function(module, exports, __webpack_require__) {
-
 	/* WEBPACK VAR INJECTION */(function(process) {// Copyright Joyent, Inc. and other Node contributors.
 	//
 	// Permission is hereby granted, free of charge, to any person obtaining a
@@ -17786,7 +17691,6 @@
 	var isArray = __webpack_require__(31);
 	/*</replacement>*/
 
-
 	/*<replacement>*/
 	var Buffer = __webpack_require__(2).Buffer;
 	/*</replacement>*/
@@ -17810,7 +17714,6 @@
 
 	var StringDecoder;
 
-
 	/*<replacement>*/
 	var debug = __webpack_require__(34);
 	if (debug && debug.debuglog) {
@@ -17819,7 +17722,6 @@
 	  debug = function () {};
 	}
 	/*</replacement>*/
-
 
 	util.inherits(Readable, Stream);
 
@@ -17857,7 +17759,6 @@
 	  this.needReadable = false;
 	  this.emittedReadable = false;
 	  this.readableListening = false;
-
 
 	  // object stream flag. Used to make read(n) ignore n and to
 	  // make all the buffer merging and length checks go away
@@ -17975,8 +17876,6 @@
 
 	  return needMoreData(state);
 	}
-
-
 
 	// if it's past the high water mark, we can push in some more.
 	// Also, if we have no data yet, we can stand some
@@ -18179,7 +18078,6 @@
 	  return er;
 	}
 
-
 	function onEofChunk(stream, state) {
 	  if (state.decoder && !state.ended) {
 	    var chunk = state.decoder.end();
@@ -18217,7 +18115,6 @@
 	  stream.emit('readable');
 	  flow(stream);
 	}
-
 
 	// at this point, the user has presumably seen the 'readable' event,
 	// and called read() to consume some data.  that may have triggered
@@ -18357,8 +18254,6 @@
 	  else
 	    dest._events.error = [onerror, dest._events.error];
 
-
-
 	  // Both close and finish should trigger unpipe, but only once.
 	  function onclose() {
 	    dest.removeListener('finish', onfinish);
@@ -18401,7 +18296,6 @@
 	    }
 	  };
 	}
-
 
 	Readable.prototype.unpipe = function(dest) {
 	  var state = this._readableState;
@@ -18606,8 +18500,6 @@
 	  return self;
 	};
 
-
-
 	// exposed for testing purposes only.
 	Readable._fromList = fromList;
 
@@ -18716,7 +18608,6 @@
 /***/ },
 /* 30 */
 /***/ function(module, exports) {
-
 	// shim for using process in browser
 
 	var process = module.exports = {};
@@ -18808,20 +18699,16 @@
 	};
 	process.umask = function() { return 0; };
 
-
 /***/ },
 /* 31 */
 /***/ function(module, exports) {
-
 	module.exports = Array.isArray || function (arr) {
 	  return Object.prototype.toString.call(arr) == '[object Array]';
 	};
 
-
 /***/ },
 /* 32 */
 /***/ function(module, exports, __webpack_require__) {
-
 	/* WEBPACK VAR INJECTION */(function(Buffer) {// Copyright Joyent, Inc. and other Node contributors.
 	//
 	// Permission is hereby granted, free of charge, to any person obtaining a
@@ -18934,7 +18821,6 @@
 /***/ },
 /* 33 */
 /***/ function(module, exports) {
-
 	if (typeof Object.create === 'function') {
 	  // implementation from standard node.js 'util' module
 	  module.exports = function inherits(ctor, superCtor) {
@@ -18959,17 +18845,14 @@
 	  }
 	}
 
-
 /***/ },
 /* 34 */
 /***/ function(module, exports) {
-
 	/* (ignored) */
 
 /***/ },
 /* 35 */
 /***/ function(module, exports, __webpack_require__) {
-
 	/* WEBPACK VAR INJECTION */(function(process) {// Copyright Joyent, Inc. and other Node contributors.
 	//
 	// Permission is hereby granted, free of charge, to any person obtaining a
@@ -19005,7 +18888,6 @@
 	  return keys;
 	}
 	/*</replacement>*/
-
 
 	/*<replacement>*/
 	var util = __webpack_require__(32);
@@ -19065,7 +18947,6 @@
 /***/ },
 /* 36 */
 /***/ function(module, exports, __webpack_require__) {
-
 	/* WEBPACK VAR INJECTION */(function(process) {// Copyright Joyent, Inc. and other Node contributors.
 	//
 	// Permission is hereby granted, free of charge, to any person obtaining a
@@ -19098,7 +18979,6 @@
 	/*</replacement>*/
 
 	Writable.WritableState = WritableState;
-
 
 	/*<replacement>*/
 	var util = __webpack_require__(32);
@@ -19223,7 +19103,6 @@
 	Writable.prototype.pipe = function() {
 	  this.emit('error', new Error('Cannot pipe. Not readable.'));
 	};
-
 
 	function writeAfterEnd(stream, state, cb) {
 	  var er = new Error('write after end');
@@ -19418,7 +19297,6 @@
 	  }
 	}
 
-
 	// if there's something in the buffer waiting, then process it
 	function clearBuffer(stream, state) {
 	  state.bufferProcessing = true;
@@ -19473,7 +19351,6 @@
 
 	Writable.prototype._write = function(chunk, encoding, cb) {
 	  cb(new Error('not implemented'));
-
 	};
 
 	Writable.prototype._writev = null;
@@ -19503,7 +19380,6 @@
 	  if (!state.ending && !state.finished)
 	    endWritable(this, state, cb);
 	};
-
 
 	function needFinish(stream, state) {
 	  return (state.ending &&
@@ -19549,7 +19425,6 @@
 /***/ },
 /* 37 */
 /***/ function(module, exports, __webpack_require__) {
-
 	// Copyright Joyent, Inc. and other Node contributors.
 	//
 	// Permission is hereby granted, free of charge, to any person obtaining a
@@ -19580,7 +19455,6 @@
 	         default: return false;
 	       }
 	     }
-
 
 	function assertEncoding(encoding) {
 	  if (encoding && !isBufferEncoding(encoding)) {
@@ -19628,7 +19502,6 @@
 	  // Number of bytes expected for the current incomplete multi-byte character.
 	  this.charLength = 0;
 	};
-
 
 	// write decodes the given buffer and returns it as JS string that is
 	// guaranteed to not contain any partial multi-byte characters. Any partial
@@ -19772,11 +19645,9 @@
 	  this.charLength = this.charReceived ? 3 : 0;
 	}
 
-
 /***/ },
 /* 38 */
 /***/ function(module, exports, __webpack_require__) {
-
 	// Copyright Joyent, Inc. and other Node contributors.
 	//
 	// Permission is hereby granted, free of charge, to any person obtaining a
@@ -19797,7 +19668,6 @@
 	// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
 	// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
 	// USE OR OTHER DEALINGS IN THE SOFTWARE.
-
 
 	// a transform stream is a readable/writable stream where you do
 	// something with the data.  Sometimes it's called a "filter",
@@ -19852,7 +19722,6 @@
 
 	util.inherits(Transform, Duplex);
 
-
 	function TransformState(options, stream) {
 	  this.afterTransform = function(er, data) {
 	    return afterTransform(stream, er, data);
@@ -19888,7 +19757,6 @@
 	    stream._read(rs.highWaterMark);
 	  }
 	}
-
 
 	function Transform(options) {
 	  if (!(this instanceof Transform))
@@ -19968,7 +19836,6 @@
 	  }
 	};
 
-
 	function done(stream, er) {
 	  if (er)
 	    return stream.emit('error', er);
@@ -19987,11 +19854,9 @@
 	  return stream.push(null);
 	}
 
-
 /***/ },
 /* 39 */
 /***/ function(module, exports, __webpack_require__) {
-
 	// Copyright Joyent, Inc. and other Node contributors.
 	//
 	// Permission is hereby granted, free of charge, to any person obtaining a
@@ -20039,39 +19904,29 @@
 	  cb(null, chunk);
 	};
 
-
 /***/ },
 /* 40 */
 /***/ function(module, exports, __webpack_require__) {
-
 	module.exports = __webpack_require__(36)
-
 
 /***/ },
 /* 41 */
 /***/ function(module, exports, __webpack_require__) {
-
 	module.exports = __webpack_require__(35)
-
 
 /***/ },
 /* 42 */
 /***/ function(module, exports, __webpack_require__) {
-
 	module.exports = __webpack_require__(38)
-
 
 /***/ },
 /* 43 */
 /***/ function(module, exports, __webpack_require__) {
-
 	module.exports = __webpack_require__(39)
-
 
 /***/ },
 /* 44 */
 /***/ function(module, exports, __webpack_require__) {
-
 	/* WEBPACK VAR INJECTION */(function(Buffer, __dirname) {/* jslint node: true */
 	'use strict';
 
@@ -20100,7 +19955,6 @@
 		this.baseSystem = data;
 	};
 
-
 	function fixFilename(filename) {
 		if (filename.indexOf(__dirname) === 0) {
 			filename = filename.substring(__dirname.length);
@@ -20120,9 +19974,7 @@
 /***/ },
 /* 45 */
 /***/ function(module, exports, __webpack_require__) {
-
 	/* WEBPACK VAR INJECTION */(function(Buffer) {// Generated by CoffeeScript 1.7.1
-
 	/*
 	PDFObject - converts JavaScript types into their corrisponding PDF types.
 	By Devon Govett
@@ -20218,13 +20070,11 @@
 	    };
 
 	    return PDFObject;
-
 	  })();
 
 	  module.exports = PDFObject;
 
 	  PDFReference = __webpack_require__(46);
-
 	}).call(this);
 
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2).Buffer))
@@ -20232,9 +20082,7 @@
 /***/ },
 /* 46 */
 /***/ function(module, exports, __webpack_require__) {
-
 	/* WEBPACK VAR INJECTION */(function(Buffer) {// Generated by CoffeeScript 1.7.1
-
 	/*
 	PDFReference - represents a reference to another object in the PDF object heirarchy
 	By Devon Govett
@@ -20326,13 +20174,11 @@
 	    };
 
 	    return PDFReference;
-
 	  })();
 
 	  module.exports = PDFReference;
 
 	  PDFObject = __webpack_require__(45);
-
 	}).call(this);
 
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2).Buffer))
@@ -20340,7 +20186,6 @@
 /***/ },
 /* 47 */
 /***/ function(module, exports, __webpack_require__) {
-
 	/* WEBPACK VAR INJECTION */(function(Buffer, process) {// Copyright Joyent, Inc. and other Node contributors.
 	//
 	// Permission is hereby granted, free of charge, to any person obtaining a
@@ -20446,7 +20291,6 @@
 	exports.createUnzip = function(o) {
 	  return new Unzip(o);
 	};
-
 
 	// Convenience methods.
 	// compress/decompress a string or buffer in one step.
@@ -20590,8 +20434,6 @@
 	  Zlib.call(this, opts, binding.INFLATE);
 	}
 
-
-
 	// gzip - bigger header, same deflate compression
 	function Gzip(opts) {
 	  if (!(this instanceof Gzip)) return new Gzip(opts);
@@ -20602,8 +20444,6 @@
 	  if (!(this instanceof Gunzip)) return new Gunzip(opts);
 	  Zlib.call(this, opts, binding.GUNZIP);
 	}
-
-
 
 	// raw - no header
 	function DeflateRaw(opts) {
@@ -20616,13 +20456,11 @@
 	  Zlib.call(this, opts, binding.INFLATERAW);
 	}
 
-
 	// auto-detect header.
 	function Unzip(opts) {
 	  if (!(this instanceof Unzip)) return new Unzip(opts);
 	  Zlib.call(this, opts, binding.UNZIP);
 	}
-
 
 	// the Zlib class they all inherit from
 	// This thing manages the queue of requests, and returns
@@ -20957,7 +20795,6 @@
 /***/ },
 /* 48 */
 /***/ function(module, exports, __webpack_require__) {
-
 	/* WEBPACK VAR INJECTION */(function(process, Buffer) {var msg = __webpack_require__(49);
 	var zstream = __webpack_require__(50);
 	var zlib_deflate = __webpack_require__(51);
@@ -20984,7 +20821,7 @@
 	function Zlib(mode) {
 	  if (mode < exports.DEFLATE || mode > exports.UNZIP)
 	    throw new TypeError("Bad argument");
-	    
+
 	  this.mode = mode;
 	  this.init_done = false;
 	  this.write_in_progress = false;
@@ -21002,18 +20839,18 @@
 	  this.memLevel = memLevel;
 	  this.strategy = strategy;
 	  // dictionary not supported.
-	  
+
 	  if (this.mode === exports.GZIP || this.mode === exports.GUNZIP)
 	    this.windowBits += 16;
-	    
+
 	  if (this.mode === exports.UNZIP)
 	    this.windowBits += 32;
-	    
+
 	  if (this.mode === exports.DEFLATERAW || this.mode === exports.INFLATERAW)
 	    this.windowBits = -this.windowBits;
-	    
+
 	  this.strm = new zstream();
-	  
+
 	  switch (this.mode) {
 	    case exports.DEFLATE:
 	    case exports.GZIP:
@@ -21039,12 +20876,12 @@
 	    default:
 	      throw new Error("Unknown mode " + this.mode);
 	  }
-	  
+
 	  if (status !== exports.Z_OK) {
 	    this._error(status);
 	    return;
 	  }
-	  
+
 	  this.write_in_progress = false;
 	  this.init_done = true;
 	};
@@ -21056,31 +20893,31 @@
 	Zlib.prototype._writeCheck = function() {
 	  if (!this.init_done)
 	    throw new Error("write before init");
-	    
+
 	  if (this.mode === exports.NONE)
 	    throw new Error("already finalized");
-	    
+
 	  if (this.write_in_progress)
 	    throw new Error("write already in progress");
-	    
+
 	  if (this.pending_close)
 	    throw new Error("close is pending");
 	};
 
-	Zlib.prototype.write = function(flush, input, in_off, in_len, out, out_off, out_len) {    
+	Zlib.prototype.write = function(flush, input, in_off, in_len, out, out_off, out_len) {
 	  this._writeCheck();
 	  this.write_in_progress = true;
-	  
+
 	  var self = this;
 	  process.nextTick(function() {
 	    self.write_in_progress = false;
 	    var res = self._write(flush, input, in_off, in_len, out, out_off, out_len);
 	    self.callback(res[0], res[1]);
-	    
+
 	    if (self.pending_close)
 	      self.close();
 	  });
-	  
+
 	  return this;
 	};
 
@@ -21098,7 +20935,7 @@
 
 	Zlib.prototype._write = function(flush, input, in_off, in_len, out, out_off, out_len) {
 	  this.write_in_progress = true;
-	  
+
 	  if (flush !== exports.Z_NO_FLUSH &&
 	      flush !== exports.Z_PARTIAL_FLUSH &&
 	      flush !== exports.Z_SYNC_FLUSH &&
@@ -21107,18 +20944,18 @@
 	      flush !== exports.Z_BLOCK) {
 	    throw new Error("Invalid flush value");
 	  }
-	  
+
 	  if (input == null) {
 	    input = new Buffer(0);
 	    in_len = 0;
 	    in_off = 0;
 	  }
-	  
+
 	  if (out._set)
 	    out.set = out._set;
 	  else
 	    out.set = bufferSet;
-	  
+
 	  var strm = this.strm;
 	  strm.avail_in = in_len;
 	  strm.input = input;
@@ -21126,7 +20963,7 @@
 	  strm.avail_out = out_len;
 	  strm.output = out;
 	  strm.next_out = out_off;
-	  
+
 	  switch (this.mode) {
 	    case exports.DEFLATE:
 	    case exports.GZIP:
@@ -21142,11 +20979,11 @@
 	    default:
 	      throw new Error("Unknown mode " + this.mode);
 	  }
-	  
+
 	  if (status !== exports.Z_STREAM_END && status !== exports.Z_OK) {
 	    this._error(status);
 	  }
-	  
+
 	  this.write_in_progress = false;
 	  return [strm.avail_in, strm.avail_out];
 	};
@@ -21156,15 +20993,15 @@
 	    this.pending_close = true;
 	    return;
 	  }
-	  
+
 	  this.pending_close = false;
-	  
+
 	  if (this.mode === exports.DEFLATE || this.mode === exports.GZIP || this.mode === exports.DEFLATERAW) {
 	    zlib_deflate.deflateEnd(this.strm);
 	  } else {
 	    zlib_inflate.inflateEnd(this.strm);
 	  }
-	  
+
 	  this.mode = exports.NONE;
 	};
 
@@ -21179,7 +21016,7 @@
 	      var status = zlib_inflate.inflateReset(this.strm);
 	      break;
 	  }
-	  
+
 	  if (status !== exports.Z_OK) {
 	    this._error(status);
 	  }
@@ -21187,7 +21024,7 @@
 
 	Zlib.prototype._error = function(status) {
 	  this.onerror(msg[status] + ': ' + this.strm.msg, status);
-	  
+
 	  this.write_in_progress = false;
 	  if (this.pending_close)
 	    this.close();
@@ -21200,7 +21037,6 @@
 /***/ },
 /* 49 */
 /***/ function(module, exports) {
-
 	'use strict';
 
 	module.exports = {
@@ -21215,13 +21051,10 @@
 	  '-6':   'incompatible version' /* Z_VERSION_ERROR (-6) */
 	};
 
-
 /***/ },
 /* 50 */
 /***/ function(module, exports) {
-
 	'use strict';
-
 
 	function ZStream() {
 	  /* next input byte */
@@ -21250,11 +21083,9 @@
 
 	module.exports = ZStream;
 
-
 /***/ },
 /* 51 */
 /***/ function(module, exports, __webpack_require__) {
-
 	'use strict';
 
 	var utils   = __webpack_require__(52);
@@ -21266,7 +21097,6 @@
 	/* Public constants ==========================================================*/
 	/* ===========================================================================*/
 
-
 	/* Allowed flush values; see deflate() and inflate() below for details */
 	var Z_NO_FLUSH      = 0;
 	var Z_PARTIAL_FLUSH = 1;
@@ -21275,7 +21105,6 @@
 	var Z_FINISH        = 4;
 	var Z_BLOCK         = 5;
 	//var Z_TREES         = 6;
-
 
 	/* Return codes for the compression/decompression functions. Negative values
 	 * are errors, positive values are used for special but normal events.
@@ -21290,13 +21119,11 @@
 	var Z_BUF_ERROR     = -5;
 	//var Z_VERSION_ERROR = -6;
 
-
 	/* compression levels */
 	//var Z_NO_COMPRESSION      = 0;
 	//var Z_BEST_SPEED          = 1;
 	//var Z_BEST_COMPRESSION    = 9;
 	var Z_DEFAULT_COMPRESSION = -1;
-
 
 	var Z_FILTERED            = 1;
 	var Z_HUFFMAN_ONLY        = 2;
@@ -21310,19 +21137,16 @@
 	//var Z_ASCII               = 1; // = Z_TEXT
 	var Z_UNKNOWN             = 2;
 
-
 	/* The deflate compression method */
 	var Z_DEFLATED  = 8;
 
 	/*============================================================================*/
-
 
 	var MAX_MEM_LEVEL = 9;
 	/* Maximum value for memLevel in deflateInit2 */
 	var MAX_WBITS = 15;
 	/* 32K LZ77 window */
 	var DEF_MEM_LEVEL = 8;
-
 
 	var LENGTH_CODES  = 29;
 	/* number of length codes, not counting the special END_BLOCK code */
@@ -21371,7 +21195,6 @@
 
 	function zero(buf) { var len = buf.length; while (--len >= 0) { buf[len] = 0; } }
 
-
 	/* =========================================================================
 	 * Flush as much pending output as possible. All deflate() output goes
 	 * through this function so some applications may wish to modify it
@@ -21399,18 +21222,15 @@
 	  }
 	}
 
-
 	function flush_block_only (s, last) {
 	  trees._tr_flush_block(s, (s.block_start >= 0 ? s.block_start : -1), s.strstart - s.block_start, last);
 	  s.block_start = s.strstart;
 	  flush_pending(s.strm);
 	}
 
-
 	function put_byte(s, b) {
 	  s.pending_buf[s.pending++] = b;
 	}
-
 
 	/* =========================================================================
 	 * Put a short in the pending buffer. The 16-bit value is put in MSB order.
@@ -21423,7 +21243,6 @@
 	  s.pending_buf[s.pending++] = (b >>> 8) & 0xff;
 	  s.pending_buf[s.pending++] = b & 0xff;
 	}
-
 
 	/* ===========================================================================
 	 * Read a new buffer from the current input stream, update the adler32
@@ -21454,7 +21273,6 @@
 
 	  return len;
 	}
-
 
 	/* ===========================================================================
 	 * Set match_start to the longest match starting at the given string and
@@ -21567,7 +21385,6 @@
 	  return s.lookahead;
 	}
 
-
 	/* ===========================================================================
 	 * Fill the window when the lookahead becomes insufficient.
 	 * Updates strstart and lookahead.
@@ -21601,12 +21418,10 @@
 	    //    }
 	    //}
 
-
 	    /* If the window is almost full and there is insufficient lookahead,
 	     * move the upper half to the lower one to make room in the upper half.
 	     */
 	    if (s.strstart >= _w_size + (_w_size - MIN_LOOKAHEAD)) {
-
 	      utils.arraySet(s.window, s.window, _w_size, _w_size, 0);
 	      s.match_start -= _w_size;
 	      s.strstart -= _w_size;
@@ -21684,7 +21499,6 @@
 	    /* If the whole input has less than MIN_MATCH bytes, ins_h is garbage,
 	     * but this is not important since only literal bytes will be emitted.
 	     */
-
 	  } while (s.lookahead < MIN_LOOKAHEAD && s.strm.avail_in !== 0);
 
 	  /* If the WIN_INIT bytes after the end of the current data have never been
@@ -21748,7 +21562,6 @@
 	  for (;;) {
 	    /* Fill the window as much as possible: */
 	    if (s.lookahead <= 1) {
-
 	      //Assert(s->strstart < s->w_size+MAX_DIST(s) ||
 	      //  s->block_start >= (long)s->w_size, "slide too late");
 	//      if (!(s.strstart < s.w_size + (s.w_size - MIN_LOOKAHEAD) ||
@@ -21785,8 +21598,6 @@
 	        return BS_NEED_MORE;
 	      }
 	      /***/
-
-
 	    }
 	    /* Flush if we may have to slide, otherwise block_start may become
 	     * negative and the data will be gone:
@@ -22010,7 +21821,6 @@
 
 	      if (s.match_length <= 5 &&
 	         (s.strategy === Z_FILTERED || (s.match_length === MIN_MATCH && s.strstart - s.match_start > 4096/*TOO_FAR*/))) {
-
 	        /* If prev_match is also MIN_MATCH, match_start is garbage
 	         * but we will ignore the current match anyway.
 	         */
@@ -22057,7 +21867,6 @@
 	        }
 	        /***/
 	      }
-
 	    } else if (s.match_available) {
 	      /* If there was no match at the previous position, output a
 	       * single literal. If there was a match but the current match
@@ -22115,7 +21924,6 @@
 
 	  return BS_BLOCK_DONE;
 	}
-
 
 	/* ===========================================================================
 	 * For Z_RLE, simply look for runs of bytes, generate matches only of distance
@@ -22299,7 +22107,6 @@
 	  new Config(32, 258, 258, 4096, deflate_slow)     /* 9 max compression */
 	];
 
-
 	/* ===========================================================================
 	 * Initialize the "longest match" routines for a new zlib stream
 	 */
@@ -22324,7 +22131,6 @@
 	  s.match_available = 0;
 	  s.ins_h = 0;
 	}
-
 
 	function DeflateState() {
 	  this.strm = null;            /* pointer back to this zlib stream */
@@ -22494,7 +22300,6 @@
 	  this.matches = 0;       /* number of string matches in current block */
 	  this.insert = 0;        /* bytes at end of window left to insert */
 
-
 	  this.bi_buf = 0;
 	  /* Output buffer. bits are inserted starting at the bottom (least
 	   * significant bits).
@@ -22513,7 +22318,6 @@
 	   * updated to the new high water mark.
 	   */
 	}
-
 
 	function deflateResetKeep(strm) {
 	  var s;
@@ -22543,7 +22347,6 @@
 	  return Z_OK;
 	}
 
-
 	function deflateReset(strm) {
 	  var ret = deflateResetKeep(strm);
 	  if (ret === Z_OK) {
@@ -22552,14 +22355,12 @@
 	  return ret;
 	}
 
-
 	function deflateSetHeader(strm, head) {
 	  if (!strm || !strm.state) { return Z_STREAM_ERROR; }
 	  if (strm.state.wrap !== 2) { return Z_STREAM_ERROR; }
 	  strm.state.gzhead = head;
 	  return Z_OK;
 	}
-
 
 	function deflateInit2(strm, level, method, windowBits, memLevel, strategy) {
 	  if (!strm) { // === Z_NULL
@@ -22581,13 +22382,11 @@
 	    windowBits -= 16;
 	  }
 
-
 	  if (memLevel < 1 || memLevel > MAX_MEM_LEVEL || method !== Z_DEFLATED ||
 	    windowBits < 8 || windowBits > 15 || level < 0 || level > 9 ||
 	    strategy < 0 || strategy > Z_FIXED) {
 	    return err(strm, Z_STREAM_ERROR);
 	  }
-
 
 	  if (windowBits === 8) {
 	    windowBits = 9;
@@ -22636,7 +22435,6 @@
 	  return deflateInit2(strm, level, Z_DEFLATED, MAX_WBITS, DEF_MEM_LEVEL, Z_DEFAULT_STRATEGY);
 	}
 
-
 	function deflate(strm, flush) {
 	  var old_flush, s;
 	  var beg, val; // for gzip header write only
@@ -22660,7 +22458,6 @@
 
 	  /* Write the header */
 	  if (s.status === INIT_STATE) {
-
 	    if (s.wrap === 2) { // GZIP header
 	      strm.adler = 0;  //crc32(0L, Z_NULL, 0);
 	      put_byte(s, 31);
@@ -23021,18 +22818,14 @@
 	exports.deflateTune = deflateTune;
 	*/
 
-
 /***/ },
 /* 52 */
 /***/ function(module, exports) {
-
 	'use strict';
-
 
 	var TYPED_OK =  (typeof Uint8Array !== 'undefined') &&
 	                (typeof Uint16Array !== 'undefined') &&
 	                (typeof Int32Array !== 'undefined');
-
 
 	exports.assign = function (obj /*from1, from2, from3, ...*/) {
 	  var sources = Array.prototype.slice.call(arguments, 1);
@@ -23054,7 +22847,6 @@
 	  return obj;
 	};
 
-
 	// reduce buffer size, avoiding mem copy
 	exports.shrinkBuf = function (buf, size) {
 	  if (buf.length === size) { return buf; }
@@ -23062,7 +22854,6 @@
 	  buf.length = size;
 	  return buf;
 	};
-
 
 	var fnTyped = {
 	  arraySet: function (dest, src, src_offs, len, dest_offs) {
@@ -23110,7 +22901,6 @@
 	  }
 	};
 
-
 	// Enable/Disable typed arrays use, for testing
 	//
 	exports.setTyped = function (on) {
@@ -23129,19 +22919,15 @@
 
 	exports.setTyped(TYPED_OK);
 
-
 /***/ },
 /* 53 */
 /***/ function(module, exports, __webpack_require__) {
-
 	'use strict';
-
 
 	var utils = __webpack_require__(52);
 
 	/* Public constants ==========================================================*/
 	/* ===========================================================================*/
-
 
 	//var Z_FILTERED          = 1;
 	//var Z_HUFFMAN_ONLY      = 2;
@@ -23156,7 +22942,6 @@
 	var Z_UNKNOWN             = 2;
 
 	/*============================================================================*/
-
 
 	function zero(buf) { var len = buf.length; while (--len >= 0) { buf[len] = 0; } }
 
@@ -23199,7 +22984,6 @@
 
 	var Buf_size      = 16;
 	/* size of bit buffer in bi_buf */
-
 
 	/* ===========================================================================
 	 * Constants
@@ -23277,9 +23061,7 @@
 	zero(base_dist);
 	/* First normalized distance for each code (0 = distance of 1) */
 
-
 	var StaticTreeDesc = function (static_tree, extra_bits, extra_base, elems, max_length) {
-
 	  this.static_tree  = static_tree;  /* static tree or NULL */
 	  this.extra_bits   = extra_bits;   /* extra bits for each code or NULL */
 	  this.extra_base   = extra_base;   /* base index for extra_bits */
@@ -23290,11 +23072,9 @@
 	  this.has_stree    = static_tree && static_tree.length;
 	};
 
-
 	var static_l_desc;
 	var static_d_desc;
 	var static_bl_desc;
-
 
 	var TreeDesc = function(dyn_tree, stat_desc) {
 	  this.dyn_tree = dyn_tree;     /* the dynamic tree */
@@ -23302,12 +23082,9 @@
 	  this.stat_desc = stat_desc;   /* the corresponding static tree */
 	};
 
-
-
 	function d_code(dist) {
 	  return dist < 256 ? _dist_code[dist] : _dist_code[256 + (dist >>> 7)];
 	}
-
 
 	/* ===========================================================================
 	 * Output a short LSB first on the stream.
@@ -23319,7 +23096,6 @@
 	  s.pending_buf[s.pending++] = (w) & 0xff;
 	  s.pending_buf[s.pending++] = (w >>> 8) & 0xff;
 	}
-
 
 	/* ===========================================================================
 	 * Send a value on a given number of bits.
@@ -23337,11 +23113,9 @@
 	  }
 	}
 
-
 	function send_code(s, c, tree) {
 	  send_bits(s, tree[c*2]/*.Code*/, tree[c*2 + 1]/*.Len*/);
 	}
-
 
 	/* ===========================================================================
 	 * Reverse the first len bits of a code, using straightforward code (a faster
@@ -23358,7 +23132,6 @@
 	  return res >>> 1;
 	}
 
-
 	/* ===========================================================================
 	 * Flush the bit buffer, keeping at most 7 bits in it.
 	 */
@@ -23367,14 +23140,12 @@
 	    put_short(s, s.bi_buf);
 	    s.bi_buf = 0;
 	    s.bi_valid = 0;
-
 	  } else if (s.bi_valid >= 8) {
 	    s.pending_buf[s.pending++] = s.bi_buf & 0xff;
 	    s.bi_buf >>= 8;
 	    s.bi_valid -= 8;
 	  }
 	}
-
 
 	/* ===========================================================================
 	 * Compute the optimal bit lengths for a tree and update the total bit length
@@ -23474,7 +23245,6 @@
 	  }
 	}
 
-
 	/* ===========================================================================
 	 * Generate the codes for a given tree and bit counts (which need not be
 	 * optimal).
@@ -23516,7 +23286,6 @@
 	    //     n, (isgraph(n) ? n : ' '), len, tree[n].Code, next_code[len]-1));
 	  }
 	}
-
 
 	/* ===========================================================================
 	 * Initialize the various 'constant' tables.
@@ -23621,7 +23390,6 @@
 	  //static_init_done = true;
 	}
 
-
 	/* ===========================================================================
 	 * Initialize a new block.
 	 */
@@ -23637,7 +23405,6 @@
 	  s.opt_len = s.static_len = 0;
 	  s.last_lit = s.matches = 0;
 	}
-
 
 	/* ===========================================================================
 	 * Flush the bit buffer and align the output on a byte boundary
@@ -23720,7 +23487,6 @@
 	  s.heap[k] = v;
 	}
 
-
 	// inlined manually
 	// var SMALLEST = 1;
 
@@ -23771,13 +23537,11 @@
 	      /* Check that the overlay between pending_buf and d_buf+l_buf is ok: */
 	      //Assert((uInt)(s->pending) < s->lit_bufsize + 2*lx,
 	      //       "pendingBuf overflow");
-
 	    } while (lx < s.last_lit);
 	  }
 
 	  send_code(s, END_BLOCK, ltree);
 	}
-
 
 	/* ===========================================================================
 	 * Construct one Huffman tree and assigns the code bit strings and lengths.
@@ -23810,7 +23574,6 @@
 	    if (tree[n * 2]/*.Freq*/ !== 0) {
 	      s.heap[++s.heap_len] = max_code = n;
 	      s.depth[n] = 0;
-
 	    } else {
 	      tree[n*2 + 1]/*.Len*/ = 0;
 	    }
@@ -23864,7 +23627,6 @@
 	    /* and insert the new node in the heap */
 	    s.heap[1/*SMALLEST*/] = node++;
 	    pqdownheap(s, tree, 1/*SMALLEST*/);
-
 	  } while (s.heap_len >= 2);
 
 	  s.heap[--s.heap_max] = s.heap[1/*SMALLEST*/];
@@ -23877,7 +23639,6 @@
 	  /* The field len is now set, we can generate the bit codes */
 	  gen_codes(tree, max_code, s.bl_count);
 	}
-
 
 	/* ===========================================================================
 	 * Scan a literal or distance tree to determine the frequencies of the codes
@@ -23910,18 +23671,13 @@
 
 	    if (++count < max_count && curlen === nextlen) {
 	      continue;
-
 	    } else if (count < min_count) {
 	      s.bl_tree[curlen * 2]/*.Freq*/ += count;
-
 	    } else if (curlen !== 0) {
-
 	      if (curlen !== prevlen) { s.bl_tree[curlen * 2]/*.Freq*/++; }
 	      s.bl_tree[REP_3_6*2]/*.Freq*/++;
-
 	    } else if (count <= 10) {
 	      s.bl_tree[REPZ_3_10*2]/*.Freq*/++;
-
 	    } else {
 	      s.bl_tree[REPZ_11_138*2]/*.Freq*/++;
 	    }
@@ -23932,18 +23688,15 @@
 	    if (nextlen === 0) {
 	      max_count = 138;
 	      min_count = 3;
-
 	    } else if (curlen === nextlen) {
 	      max_count = 6;
 	      min_count = 3;
-
 	    } else {
 	      max_count = 7;
 	      min_count = 4;
 	    }
 	  }
 	}
-
 
 	/* ===========================================================================
 	 * Send a literal or distance tree in compressed form, using the codes in
@@ -23976,10 +23729,8 @@
 
 	    if (++count < max_count && curlen === nextlen) {
 	      continue;
-
 	    } else if (count < min_count) {
 	      do { send_code(s, curlen, s.bl_tree); } while (--count !== 0);
-
 	    } else if (curlen !== 0) {
 	      if (curlen !== prevlen) {
 	        send_code(s, curlen, s.bl_tree);
@@ -23988,11 +23739,9 @@
 	      //Assert(count >= 3 && count <= 6, " 3_6?");
 	      send_code(s, REP_3_6, s.bl_tree);
 	      send_bits(s, count-3, 2);
-
 	    } else if (count <= 10) {
 	      send_code(s, REPZ_3_10, s.bl_tree);
 	      send_bits(s, count-3, 3);
-
 	    } else {
 	      send_code(s, REPZ_11_138, s.bl_tree);
 	      send_bits(s, count-11, 7);
@@ -24003,18 +23752,15 @@
 	    if (nextlen === 0) {
 	      max_count = 138;
 	      min_count = 3;
-
 	    } else if (curlen === nextlen) {
 	      max_count = 6;
 	      min_count = 3;
-
 	    } else {
 	      max_count = 7;
 	      min_count = 4;
 	    }
 	  }
 	}
-
 
 	/* ===========================================================================
 	 * Construct the Huffman tree for the bit lengths and return the index in
@@ -24050,7 +23796,6 @@
 	  return max_blindex;
 	}
 
-
 	/* ===========================================================================
 	 * Send the header for a block using dynamic Huffman trees: the counts, the
 	 * lengths of the bit length codes, the literal tree and the distance tree.
@@ -24081,7 +23826,6 @@
 	  send_tree(s, s.dyn_dtree, dcodes-1); /* distance tree */
 	  //Tracev((stderr, "\ndist tree: sent %ld", s->bits_sent));
 	}
-
 
 	/* ===========================================================================
 	 * Check if the data type is TEXT or BINARY, using the following algorithm:
@@ -24128,7 +23872,6 @@
 	  return Z_BINARY;
 	}
 
-
 	var static_init_done = false;
 
 	/* ===========================================================================
@@ -24136,7 +23879,6 @@
 	 */
 	function _tr_init(s)
 	{
-
 	  if (!static_init_done) {
 	    tr_static_init();
 	    static_init_done = true;
@@ -24153,7 +23895,6 @@
 	  init_block(s);
 	}
 
-
 	/* ===========================================================================
 	 * Send a stored block
 	 */
@@ -24167,7 +23908,6 @@
 	  copy_block(s, buf, stored_len, true); /* with header */
 	}
 
-
 	/* ===========================================================================
 	 * Send one empty static block to give enough lookahead for inflate.
 	 * This takes 10 bits, of which 7 may remain in the bit buffer.
@@ -24177,7 +23917,6 @@
 	  send_code(s, END_BLOCK, static_ltree);
 	  bi_flush(s);
 	}
-
 
 	/* ===========================================================================
 	 * Determine the best encoding for the current block: dynamic trees, static
@@ -24194,7 +23933,6 @@
 
 	  /* Build the Huffman trees unless a stored block is forced */
 	  if (s.level > 0) {
-
 	    /* Check if the file is binary or text */
 	    if (s.strm.data_type === Z_UNKNOWN) {
 	      s.strm.data_type = detect_data_type(s);
@@ -24226,7 +23964,6 @@
 	    //        s->last_lit));
 
 	    if (static_lenb <= opt_lenb) { opt_lenb = static_lenb; }
-
 	  } else {
 	    // Assert(buf != (char*)0, "lost buf");
 	    opt_lenb = static_lenb = stored_len + 5; /* force a stored block */
@@ -24242,12 +23979,9 @@
 	     * transform a block into a stored block.
 	     */
 	    _tr_stored_block(s, buf, stored_len, last);
-
 	  } else if (s.strategy === Z_FIXED || static_lenb === opt_lenb) {
-
 	    send_bits(s, (STATIC_TREES<<1) + (last ? 1 : 0), 3);
 	    compress_block(s, static_ltree, static_dtree);
-
 	  } else {
 	    send_bits(s, (DYN_TREES<<1) + (last ? 1 : 0), 3);
 	    send_all_trees(s, s.l_desc.max_code+1, s.d_desc.max_code+1, max_blindex+1);
@@ -24334,11 +24068,9 @@
 	exports._tr_tally = _tr_tally;
 	exports._tr_align = _tr_align;
 
-
 /***/ },
 /* 54 */
 /***/ function(module, exports) {
-
 	'use strict';
 
 	// Note: adler32 takes 12% for level 0 and 2% for level 6.
@@ -24369,20 +24101,16 @@
 	  return (s1 | (s2 << 16)) |0;
 	}
 
-
 	module.exports = adler32;
-
 
 /***/ },
 /* 55 */
 /***/ function(module, exports) {
-
 	'use strict';
 
 	// Note: we can't get significant speed boost here.
 	// So write code to minimize size - no pregenerated tables
 	// and array tools dependencies.
-
 
 	// Use ordinary array, since untyped makes no boost here
 	function makeTable() {
@@ -24402,7 +24130,6 @@
 	// Create table on load. Just 255 signed longs. Not a problem.
 	var crcTable = makeTable();
 
-
 	function crc32(crc, buf, len, pos) {
 	  var t = crcTable,
 	      end = pos + len;
@@ -24416,16 +24143,12 @@
 	  return (crc ^ (-1)); // >>> 0;
 	}
 
-
 	module.exports = crc32;
-
 
 /***/ },
 /* 56 */
 /***/ function(module, exports, __webpack_require__) {
-
 	'use strict';
-
 
 	var utils = __webpack_require__(52);
 	var adler32 = __webpack_require__(54);
@@ -24440,7 +24163,6 @@
 	/* Public constants ==========================================================*/
 	/* ===========================================================================*/
 
-
 	/* Allowed flush values; see deflate() and inflate() below for details */
 	//var Z_NO_FLUSH      = 0;
 	//var Z_PARTIAL_FLUSH = 1;
@@ -24449,7 +24171,6 @@
 	var Z_FINISH        = 4;
 	var Z_BLOCK         = 5;
 	var Z_TREES         = 6;
-
 
 	/* Return codes for the compression/decompression functions. Negative values
 	 * are errors, positive values are used for special but normal events.
@@ -24467,10 +24188,8 @@
 	/* The deflate compression method */
 	var Z_DEFLATED  = 8;
 
-
 	/* STATES ====================================================================*/
 	/* ===========================================================================*/
-
 
 	var    HEAD = 1;       /* i: waiting for magic header */
 	var    FLAGS = 2;      /* i: waiting for method and flags (gzip) */
@@ -24507,8 +24226,6 @@
 
 	/* ===========================================================================*/
 
-
-
 	var ENOUGH_LENS = 852;
 	var ENOUGH_DISTS = 592;
 	//var ENOUGH =  (ENOUGH_LENS+ENOUGH_DISTS);
@@ -24517,14 +24234,12 @@
 	/* 32K LZ77 window */
 	var DEF_WBITS = MAX_WBITS;
 
-
 	function ZSWAP32(q) {
 	  return  (((q >>> 24) & 0xff) +
 	          ((q >>> 8) & 0xff00) +
 	          ((q & 0xff00) << 8) +
 	          ((q & 0xff) << 24));
 	}
-
 
 	function InflateState() {
 	  this.mode = 0;             /* current inflate mode */
@@ -24620,7 +24335,6 @@
 	  state.whave = 0;
 	  state.wnext = 0;
 	  return inflateResetKeep(strm);
-
 	}
 
 	function inflateReset2(strm, windowBits) {
@@ -24681,7 +24395,6 @@
 	  return inflateInit2(strm, DEF_WBITS);
 	}
 
-
 	/*
 	 Return state with length and distance decoding tables and index sizes set to
 	 fixed code decoding.  Normally this returns fixed tables from inffixed.h.
@@ -24728,7 +24441,6 @@
 	  state.distcode = distfix;
 	  state.distbits = 5;
 	}
-
 
 	/*
 	 Update the window with the last wsize (normally 32K) bytes written before
@@ -24812,7 +24524,6 @@
 	  var order = /* permutation of code lengths */
 	    [16, 17, 18, 0, 8, 7, 9, 6, 10, 5, 11, 4, 12, 3, 13, 2, 14, 1, 15];
 
-
 	  if (!strm || !strm.state || !strm.output ||
 	      (!strm.input && strm.avail_in !== 0)) {
 	    return Z_STREAM_ERROR;
@@ -24820,7 +24531,6 @@
 
 	  state = strm.state;
 	  if (state.mode === TYPE) { state.mode = TYPEDO; }    /* skip check */
-
 
 	  //--- LOAD() ---
 	  put = strm.next_out;
@@ -25780,7 +25490,6 @@
 	          strm.adler = state.check =
 	              /*UPDATE(state.check, put - _out, _out);*/
 	              (state.flags ? crc32(state.check, output, _out, put - _out) : adler32(state.check, output, _out, put - _out));
-
 	        }
 	        _out = left;
 	        // NB: crc32 stored as signed 32-bit int, ZSWAP32 returns signed too
@@ -25879,7 +25588,6 @@
 	}
 
 	function inflateEnd(strm) {
-
 	  if (!strm || !strm.state /*|| strm->zfree == (free_func)0*/) {
 	    return Z_STREAM_ERROR;
 	  }
@@ -25906,7 +25614,6 @@
 	  return Z_OK;
 	}
 
-
 	exports.inflateReset = inflateReset;
 	exports.inflateReset2 = inflateReset2;
 	exports.inflateResetKeep = inflateResetKeep;
@@ -25928,11 +25635,9 @@
 	exports.inflateUndermine = inflateUndermine;
 	*/
 
-
 /***/ },
 /* 57 */
 /***/ function(module, exports) {
-
 	'use strict';
 
 	// See state defs from inflate.js
@@ -26002,7 +25707,6 @@
 	  var from;                   /* where to copy match from */
 	  var from_source;
 
-
 	  var input, output; // JS specific, because we have no pointers
 
 	  /* copy state to local variables */
@@ -26028,7 +25732,6 @@
 	  dcode = state.distcode;
 	  lmask = (1 << state.lenbits) - 1;
 	  dmask = (1 << state.distbits) - 1;
-
 
 	  /* decode literals and length/distances until end-of-block or not enough
 	     input data or output space */
@@ -26259,13 +25962,10 @@
 	  return;
 	};
 
-
 /***/ },
 /* 58 */
 /***/ function(module, exports, __webpack_require__) {
-
 	'use strict';
-
 
 	var utils = __webpack_require__(52);
 
@@ -26383,7 +26083,6 @@
 	    //table.val[opts.table_index++] = 0;   //here.val = (var short)0;
 	    table[table_index++] = (1 << 24) | (64 << 16) | 0;
 
-
 	    //table.op[opts.table_index] = 64;
 	    //table.bits[opts.table_index] = 1;
 	    //table.val[opts.table_index++] = 0;
@@ -26462,14 +26161,12 @@
 	  if (type === CODES) {
 	    base = extra = work;    /* dummy value--not used */
 	    end = 19;
-
 	  } else if (type === LENS) {
 	    base = lbase;
 	    base_index -= 257;
 	    extra = lext;
 	    extra_index -= 257;
 	    end = 256;
-
 	  } else {                    /* DISTS */
 	    base = dbase;
 	    extra = dext;
@@ -26592,13 +26289,10 @@
 	  return 0;
 	};
 
-
 /***/ },
 /* 59 */
 /***/ function(module, exports) {
-
 	module.exports = {
-
 	  /* Allowed flush values; see deflate() and inflate() below for details */
 	  Z_NO_FLUSH:         0,
 	  Z_PARTIAL_FLUSH:    1,
@@ -26627,7 +26321,6 @@
 	  Z_BEST_COMPRESSION:       9,
 	  Z_DEFAULT_COMPRESSION:   -1,
 
-
 	  Z_FILTERED:               1,
 	  Z_HUFFMAN_ONLY:           2,
 	  Z_RLE:                    3,
@@ -26645,11 +26338,9 @@
 	  //Z_NULL:                 null // Use -1 or null inline, depending on var type
 	};
 
-
 /***/ },
 /* 60 */
 /***/ function(module, exports, __webpack_require__) {
-
 	/* WEBPACK VAR INJECTION */(function(global, process) {// Copyright Joyent, Inc. and other Node contributors.
 	//
 	// Permission is hereby granted, free of charge, to any person obtaining a
@@ -26710,7 +26401,6 @@
 	  return str;
 	};
 
-
 	// Mark that a method should not be used.
 	// Returns a modified function which warns once by default.
 	// If --no-deprecation is set, then it is a no-op.
@@ -26744,7 +26434,6 @@
 	  return deprecated;
 	};
 
-
 	var debugs = {};
 	var debugEnviron;
 	exports.debuglog = function(set) {
@@ -26764,7 +26453,6 @@
 	  }
 	  return debugs[set];
 	};
-
 
 	/**
 	 * Echos the value of a value. Trys to print the value out
@@ -26800,7 +26488,6 @@
 	}
 	exports.inspect = inspect;
 
-
 	// http://en.wikipedia.org/wiki/ANSI_escape_code#graphics
 	inspect.colors = {
 	  'bold' : [1, 22],
@@ -26831,7 +26518,6 @@
 	  'regexp': 'red'
 	};
 
-
 	function stylizeWithColor(str, styleType) {
 	  var style = inspect.styles[styleType];
 
@@ -26843,11 +26529,9 @@
 	  }
 	}
 
-
 	function stylizeNoColor(str, styleType) {
 	  return str;
 	}
-
 
 	function arrayToHash(array) {
 	  var hash = {};
@@ -26858,7 +26542,6 @@
 
 	  return hash;
 	}
-
 
 	function formatValue(ctx, value, recurseTimes) {
 	  // Provide a hook for user-specified inspect functions.
@@ -26972,7 +26655,6 @@
 	  return reduceToSingleString(output, base, braces);
 	}
 
-
 	function formatPrimitive(ctx, value) {
 	  if (isUndefined(value))
 	    return ctx.stylize('undefined', 'undefined');
@@ -26991,11 +26673,9 @@
 	    return ctx.stylize('null', 'null');
 	}
 
-
 	function formatError(value) {
 	  return '[' + Error.prototype.toString.call(value) + ']';
 	}
-
 
 	function formatArray(ctx, value, recurseTimes, visibleKeys, keys) {
 	  var output = [];
@@ -27015,7 +26695,6 @@
 	  });
 	  return output;
 	}
-
 
 	function formatProperty(ctx, value, recurseTimes, visibleKeys, key, array) {
 	  var name, str, desc;
@@ -27075,7 +26754,6 @@
 	  return name + ': ' + str;
 	}
 
-
 	function reduceToSingleString(output, base, braces) {
 	  var numLinesEst = 0;
 	  var length = output.reduce(function(prev, cur) {
@@ -27095,7 +26773,6 @@
 
 	  return braces[0] + base + ' ' + output.join(', ') + ' ' + braces[1];
 	}
-
 
 	// NOTE: These type checking functions intentionally don't use `instanceof`
 	// because it is fragile and can be easily faked with `Object.create()`.
@@ -27181,11 +26858,9 @@
 	  return Object.prototype.toString.call(o);
 	}
 
-
 	function pad(n) {
 	  return n < 10 ? '0' + n.toString(10) : n.toString(10);
 	}
-
 
 	var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep',
 	              'Oct', 'Nov', 'Dec'];
@@ -27199,12 +26874,10 @@
 	  return [d.getDate(), months[d.getMonth()], time].join(' ');
 	}
 
-
 	// log is just a thin wrapper to console.log that prepends a timestamp
 	exports.log = function() {
 	  console.log('%s - %s', timestamp(), exports.format.apply(exports, arguments));
 	};
-
 
 	/**
 	 * Inherit the prototype methods from one constructor into another.
@@ -27242,7 +26915,6 @@
 /***/ },
 /* 61 */
 /***/ function(module, exports) {
-
 	module.exports = function isBuffer(arg) {
 	  return arg && typeof arg === 'object'
 	    && typeof arg.copy === 'function'
@@ -27253,7 +26925,6 @@
 /***/ },
 /* 62 */
 /***/ function(module, exports) {
-
 	if (typeof Object.create === 'function') {
 	  // implementation from standard node.js 'util' module
 	  module.exports = function inherits(ctor, superCtor) {
@@ -27278,11 +26949,9 @@
 	  }
 	}
 
-
 /***/ },
 /* 63 */
 /***/ function(module, exports, __webpack_require__) {
-
 	// http://wiki.commonjs.org/wiki/Unit_Testing/1.0
 	//
 	// THIS IS NOT TESTED NOR LIKELY TO WORK OUTSIDE V8!
@@ -27460,7 +27129,6 @@
 	  // 7.1. All identical values are equivalent, as determined by ===.
 	  if (actual === expected) {
 	    return true;
-
 	  } else if (util.isBuffer(actual) && util.isBuffer(expected)) {
 	    if (actual.length != expected.length) return false;
 
@@ -27643,11 +27311,9 @@
 	  return keys;
 	};
 
-
 /***/ },
 /* 64 */
 /***/ function(module, exports) {
-
 	// Generated by CoffeeScript 1.7.1
 
 	/*
@@ -27812,18 +27478,14 @@
 	    };
 
 	    return PDFPage;
-
 	  })();
 
 	  module.exports = PDFPage;
-
 	}).call(this);
-
 
 /***/ },
 /* 65 */
 /***/ function(module, exports, __webpack_require__) {
-
 	// Generated by CoffeeScript 1.7.1
 	(function() {
 	  var PDFGradient, PDFLinearGradient, PDFRadialGradient, namedColors, _ref;
@@ -28137,14 +27799,11 @@
 	    yellow: [255, 255, 0],
 	    yellowgreen: [154, 205, 50]
 	  };
-
 	}).call(this);
-
 
 /***/ },
 /* 66 */
 /***/ function(module, exports) {
-
 	// Generated by CoffeeScript 1.7.1
 	(function() {
 	  var PDFGradient, PDFLinearGradient, PDFRadialGradient,
@@ -28300,7 +27959,6 @@
 	    };
 
 	    return PDFGradient;
-
 	  })();
 
 	  PDFLinearGradient = (function(_super) {
@@ -28330,7 +27988,6 @@
 	    };
 
 	    return PDFLinearGradient;
-
 	  })(PDFGradient);
 
 	  PDFRadialGradient = (function(_super) {
@@ -28362,7 +28019,6 @@
 	    };
 
 	    return PDFRadialGradient;
-
 	  })(PDFGradient);
 
 	  module.exports = {
@@ -28370,14 +28026,11 @@
 	    PDFLinearGradient: PDFLinearGradient,
 	    PDFRadialGradient: PDFRadialGradient
 	  };
-
 	}).call(this);
-
 
 /***/ },
 /* 67 */
 /***/ function(module, exports, __webpack_require__) {
-
 	// Generated by CoffeeScript 1.7.1
 	(function() {
 	  var KAPPA, SVGPath,
@@ -28621,14 +28274,11 @@
 	      return this.transform(xFactor, 0, 0, yFactor, x, y);
 	    }
 	  };
-
 	}).call(this);
-
 
 /***/ },
 /* 68 */
 /***/ function(module, exports) {
-
 	// Generated by CoffeeScript 1.7.1
 	(function() {
 	  var SVGPath;
@@ -28989,18 +28639,14 @@
 	    };
 
 	    return SVGPath;
-
 	  })();
 
 	  module.exports = SVGPath;
-
 	}).call(this);
-
 
 /***/ },
 /* 69 */
 /***/ function(module, exports, __webpack_require__) {
-
 	// Generated by CoffeeScript 1.7.1
 	(function() {
 	  var PDFFont;
@@ -29014,7 +28660,6 @@
 	      this._fontSize = 12;
 	      this._font = null;
 	      this._registeredFonts = {};
-	      
 	    },
 	    font: function(src, family, size) {
 	      var cacheKey, font, id, _ref;
@@ -29068,16 +28713,12 @@
 	      return this;
 	    }
 	  };
-
 	}).call(this);
-
 
 /***/ },
 /* 70 */
 /***/ function(module, exports, __webpack_require__) {
-
 	/* WEBPACK VAR INJECTION */(function(Buffer, __dirname) {// Generated by CoffeeScript 1.7.1
-
 	/*
 	PDFFont - embeds fonts in PDF documents
 	By Devon Govett
@@ -29363,11 +29004,9 @@
 	    };
 
 	    return PDFFont;
-
 	  })();
 
 	  module.exports = PDFFont;
-
 	}).call(this);
 
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2).Buffer, "/"))
@@ -29375,7 +29014,6 @@
 /***/ },
 /* 71 */
 /***/ function(module, exports, __webpack_require__) {
-
 	// Generated by CoffeeScript 1.7.1
 	(function() {
 	  var CmapTable, DFont, Data, Directory, GlyfTable, HeadTable, HheaTable, HmtxTable, LocaTable, MaxpTable, NameTable, OS2Table, PostTable, TTFFont, fs;
@@ -29498,18 +29136,14 @@
 	    };
 
 	    return TTFFont;
-
 	  })();
 
 	  module.exports = TTFFont;
-
 	}).call(this);
-
 
 /***/ },
 /* 72 */
 /***/ function(module, exports) {
-
 	// Generated by CoffeeScript 1.7.1
 	(function() {
 	  var Data;
@@ -29696,18 +29330,14 @@
 	    };
 
 	    return Data;
-
 	  })();
 
 	  module.exports = Data;
-
 	}).call(this);
-
 
 /***/ },
 /* 73 */
 /***/ function(module, exports, __webpack_require__) {
-
 	// Generated by CoffeeScript 1.7.1
 	(function() {
 	  var DFont, Data, Directory, NameTable, fs;
@@ -29809,18 +29439,14 @@
 	    };
 
 	    return DFont;
-
 	  })();
 
 	  module.exports = DFont;
-
 	}).call(this);
-
 
 /***/ },
 /* 74 */
 /***/ function(module, exports, __webpack_require__) {
-
 	/* WEBPACK VAR INJECTION */(function(Buffer) {// Generated by CoffeeScript 1.7.1
 	(function() {
 	  var Data, Directory,
@@ -29906,11 +29532,9 @@
 	    };
 
 	    return Directory;
-
 	  })();
 
 	  module.exports = Directory;
-
 	}).call(this);
 
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2).Buffer))
@@ -29918,7 +29542,6 @@
 /***/ },
 /* 75 */
 /***/ function(module, exports, __webpack_require__) {
-
 	// Generated by CoffeeScript 1.7.1
 	(function() {
 	  var Data, NameEntry, NameTable, Table, utils,
@@ -30043,7 +29666,6 @@
 	    };
 
 	    return NameTable;
-
 	  })(Table);
 
 	  module.exports = NameTable;
@@ -30058,16 +29680,12 @@
 	    }
 
 	    return NameEntry;
-
 	  })();
-
 	}).call(this);
-
 
 /***/ },
 /* 76 */
 /***/ function(module, exports) {
-
 	// Generated by CoffeeScript 1.7.1
 	(function() {
 	  var Table;
@@ -30097,30 +29715,26 @@
 	    };
 
 	    return Table;
-
 	  })();
 
 	  module.exports = Table;
-
 	}).call(this);
-
 
 /***/ },
 /* 77 */
 /***/ function(module, exports) {
-
 	// Generated by CoffeeScript 1.7.1
 
 	/*
 	 * An implementation of Ruby's string.succ method.
 	 * By Devon Govett
 	 *
-	 * Returns the successor to str. The successor is calculated by incrementing characters starting 
+	 * Returns the successor to str. The successor is calculated by incrementing characters starting
 	 * from the rightmost alphanumeric (or the rightmost character if there are no alphanumerics) in the
 	 * string. Incrementing a digit always results in another digit, and incrementing a letter results in
 	 * another letter of the same case.
 	 *
-	 * If the increment generates a carry, the character to the left of it is incremented. This 
+	 * If the increment generates a carry, the character to the left of it is incremented. This
 	 * process repeats until there is no carry, adding an additional character if necessary.
 	 *
 	 * succ("abcd")      == "abce"
@@ -30185,14 +29799,11 @@
 	    }
 	    return ret;
 	  };
-
 	}).call(this);
-
 
 /***/ },
 /* 78 */
 /***/ function(module, exports, __webpack_require__) {
-
 	// Generated by CoffeeScript 1.7.1
 	(function() {
 	  var Data, HeadTable, Table,
@@ -30257,18 +29868,14 @@
 	    };
 
 	    return HeadTable;
-
 	  })(Table);
 
 	  module.exports = HeadTable;
-
 	}).call(this);
-
 
 /***/ },
 /* 79 */
 /***/ function(module, exports, __webpack_require__) {
-
 	// Generated by CoffeeScript 1.7.1
 	(function() {
 	  var CmapEntry, CmapTable, Data, Table,
@@ -30321,7 +29928,6 @@
 	    };
 
 	    return CmapTable;
-
 	  })(Table);
 
 	  CmapEntry = (function() {
@@ -30553,18 +30159,14 @@
 	    };
 
 	    return CmapEntry;
-
 	  })();
 
 	  module.exports = CmapTable;
-
 	}).call(this);
-
 
 /***/ },
 /* 80 */
 /***/ function(module, exports, __webpack_require__) {
-
 	// Generated by CoffeeScript 1.7.1
 	(function() {
 	  var Data, HmtxTable, Table,
@@ -30645,18 +30247,14 @@
 	    };
 
 	    return HmtxTable;
-
 	  })(Table);
 
 	  module.exports = HmtxTable;
-
 	}).call(this);
-
 
 /***/ },
 /* 81 */
 /***/ function(module, exports, __webpack_require__) {
-
 	// Generated by CoffeeScript 1.7.1
 	(function() {
 	  var Data, HheaTable, Table,
@@ -30717,18 +30315,14 @@
 	    };
 
 	    return HheaTable;
-
 	  })(Table);
 
 	  module.exports = HheaTable;
-
 	}).call(this);
-
 
 /***/ },
 /* 82 */
 /***/ function(module, exports, __webpack_require__) {
-
 	// Generated by CoffeeScript 1.7.1
 	(function() {
 	  var Data, MaxpTable, Table,
@@ -30789,18 +30383,14 @@
 	    };
 
 	    return MaxpTable;
-
 	  })(Table);
 
 	  module.exports = MaxpTable;
-
 	}).call(this);
-
 
 /***/ },
 /* 83 */
 /***/ function(module, exports, __webpack_require__) {
-
 	// Generated by CoffeeScript 1.7.1
 	(function() {
 	  var Data, PostTable, Table,
@@ -30931,18 +30521,14 @@
 	    POSTSCRIPT_GLYPHS = '.notdef .null nonmarkingreturn space exclam quotedbl numbersign dollar percent\nampersand quotesingle parenleft parenright asterisk plus comma hyphen period slash\nzero one two three four five six seven eight nine colon semicolon less equal greater\nquestion at A B C D E F G H I J K L M N O P Q R S T U V W X Y Z\nbracketleft backslash bracketright asciicircum underscore grave\na b c d e f g h i j k l m n o p q r s t u v w x y z\nbraceleft bar braceright asciitilde Adieresis Aring Ccedilla Eacute Ntilde Odieresis\nUdieresis aacute agrave acircumflex adieresis atilde aring ccedilla eacute egrave\necircumflex edieresis iacute igrave icircumflex idieresis ntilde oacute ograve\nocircumflex odieresis otilde uacute ugrave ucircumflex udieresis dagger degree cent\nsterling section bullet paragraph germandbls registered copyright trademark acute\ndieresis notequal AE Oslash infinity plusminus lessequal greaterequal yen mu\npartialdiff summation product pi integral ordfeminine ordmasculine Omega ae oslash\nquestiondown exclamdown logicalnot radical florin approxequal Delta guillemotleft\nguillemotright ellipsis nonbreakingspace Agrave Atilde Otilde OE oe endash emdash\nquotedblleft quotedblright quoteleft quoteright divide lozenge ydieresis Ydieresis\nfraction currency guilsinglleft guilsinglright fi fl daggerdbl periodcentered\nquotesinglbase quotedblbase perthousand Acircumflex Ecircumflex Aacute Edieresis\nEgrave Iacute Icircumflex Idieresis Igrave Oacute Ocircumflex apple Ograve Uacute\nUcircumflex Ugrave dotlessi circumflex tilde macron breve dotaccent ring cedilla\nhungarumlaut ogonek caron Lslash lslash Scaron scaron Zcaron zcaron brokenbar Eth\neth Yacute yacute Thorn thorn minus multiply onesuperior twosuperior threesuperior\nonehalf onequarter threequarters franc Gbreve gbreve Idotaccent Scedilla scedilla\nCacute cacute Ccaron ccaron dcroat'.split(/\s+/g);
 
 	    return PostTable;
-
 	  })(Table);
 
 	  module.exports = PostTable;
-
 	}).call(this);
-
 
 /***/ },
 /* 84 */
 /***/ function(module, exports, __webpack_require__) {
-
 	// Generated by CoffeeScript 1.7.1
 	(function() {
 	  var OS2Table, Table,
@@ -31028,18 +30614,14 @@
 	    };
 
 	    return OS2Table;
-
 	  })(Table);
 
 	  module.exports = OS2Table;
-
 	}).call(this);
-
 
 /***/ },
 /* 85 */
 /***/ function(module, exports, __webpack_require__) {
-
 	// Generated by CoffeeScript 1.7.1
 	(function() {
 	  var Data, LocaTable, Table,
@@ -31121,18 +30703,14 @@
 	    };
 
 	    return LocaTable;
-
 	  })(Table);
 
 	  module.exports = LocaTable;
-
 	}).call(this);
-
 
 /***/ },
 /* 86 */
 /***/ function(module, exports, __webpack_require__) {
-
 	// Generated by CoffeeScript 1.7.1
 	(function() {
 	  var CompoundGlyph, Data, GlyfTable, SimpleGlyph, Table,
@@ -31204,7 +30782,6 @@
 	    };
 
 	    return GlyfTable;
-
 	  })(Table);
 
 	  SimpleGlyph = (function() {
@@ -31223,7 +30800,6 @@
 	    };
 
 	    return SimpleGlyph;
-
 	  })();
 
 	  CompoundGlyph = (function() {
@@ -31287,18 +30863,14 @@
 	    };
 
 	    return CompoundGlyph;
-
 	  })();
 
 	  module.exports = GlyfTable;
-
 	}).call(this);
-
 
 /***/ },
 /* 87 */
 /***/ function(module, exports, __webpack_require__) {
-
 	// Generated by CoffeeScript 1.7.1
 	(function() {
 	  var AFMFont, fs;
@@ -31431,18 +31003,14 @@
 	    characters = '.notdef       .notdef        .notdef        .notdef\n.notdef       .notdef        .notdef        .notdef\n.notdef       .notdef        .notdef        .notdef\n.notdef       .notdef        .notdef        .notdef\n.notdef       .notdef        .notdef        .notdef\n.notdef       .notdef        .notdef        .notdef\n.notdef       .notdef        .notdef        .notdef\n.notdef       .notdef        .notdef        .notdef\n\nspace         exclam         quotedbl       numbersign\ndollar        percent        ampersand      quotesingle\nparenleft     parenright     asterisk       plus\ncomma         hyphen         period         slash\nzero          one            two            three\nfour          five           six            seven\neight         nine           colon          semicolon\nless          equal          greater        question\n\nat            A              B              C\nD             E              F              G\nH             I              J              K\nL             M              N              O\nP             Q              R              S\nT             U              V              W\nX             Y              Z              bracketleft\nbackslash     bracketright   asciicircum    underscore\n\ngrave         a              b              c\nd             e              f              g\nh             i              j              k\nl             m              n              o\np             q              r              s\nt             u              v              w\nx             y              z              braceleft\nbar           braceright     asciitilde     .notdef\n\nEuro          .notdef        quotesinglbase florin\nquotedblbase  ellipsis       dagger         daggerdbl\ncircumflex    perthousand    Scaron         guilsinglleft\nOE            .notdef        Zcaron         .notdef\n.notdef       quoteleft      quoteright     quotedblleft\nquotedblright bullet         endash         emdash\ntilde         trademark      scaron         guilsinglright\noe            .notdef        zcaron         ydieresis\n\nspace         exclamdown     cent           sterling\ncurrency      yen            brokenbar      section\ndieresis      copyright      ordfeminine    guillemotleft\nlogicalnot    hyphen         registered     macron\ndegree        plusminus      twosuperior    threesuperior\nacute         mu             paragraph      periodcentered\ncedilla       onesuperior    ordmasculine   guillemotright\nonequarter    onehalf        threequarters  questiondown\n\nAgrave        Aacute         Acircumflex    Atilde\nAdieresis     Aring          AE             Ccedilla\nEgrave        Eacute         Ecircumflex    Edieresis\nIgrave        Iacute         Icircumflex    Idieresis\nEth           Ntilde         Ograve         Oacute\nOcircumflex   Otilde         Odieresis      multiply\nOslash        Ugrave         Uacute         Ucircumflex\nUdieresis     Yacute         Thorn          germandbls\n\nagrave        aacute         acircumflex    atilde\nadieresis     aring          ae             ccedilla\negrave        eacute         ecircumflex    edieresis\nigrave        iacute         icircumflex    idieresis\neth           ntilde         ograve         oacute\nocircumflex   otilde         odieresis      divide\noslash        ugrave         uacute         ucircumflex\nudieresis     yacute         thorn          ydieresis'.split(/\s+/);
 
 	    return AFMFont;
-
 	  })();
 
 	  module.exports = AFMFont;
-
 	}).call(this);
-
 
 /***/ },
 /* 88 */
 /***/ function(module, exports, __webpack_require__) {
-
 	// Generated by CoffeeScript 1.7.1
 	(function() {
 	  var CmapTable, Subset, utils,
@@ -31594,18 +31162,14 @@
 	    };
 
 	    return Subset;
-
 	  })();
 
 	  module.exports = Subset;
-
 	}).call(this);
-
 
 /***/ },
 /* 89 */
 /***/ function(module, exports, __webpack_require__) {
-
 	// Generated by CoffeeScript 1.7.1
 	(function() {
 	  var LineWrapper;
@@ -31912,14 +31476,11 @@
 	      return this.restore();
 	    }
 	  };
-
 	}).call(this);
-
 
 /***/ },
 /* 90 */
 /***/ function(module, exports, __webpack_require__) {
-
 	// Generated by CoffeeScript 1.7.1
 	(function() {
 	  var EventEmitter, LineBreaker, LineWrapper,
@@ -32166,18 +31727,14 @@
 	    };
 
 	    return LineWrapper;
-
 	  })(EventEmitter);
 
 	  module.exports = LineWrapper;
-
 	}).call(this);
-
 
 /***/ },
 /* 91 */
 /***/ function(module, exports, __webpack_require__) {
-
 	// Generated by CoffeeScript 1.7.1
 	(function() {
 	  var AI, AL, BA, BK, CB, CI_BRK, CJ, CP_BRK, CR, DI_BRK, ID, IN_BRK, LF, LineBreaker, NL, NS, PR_BRK, SA, SG, SP, UnicodeTrie, WJ, XX, characterClasses, classTrie, pairTable, _ref, _ref1;
@@ -32255,7 +31812,6 @@
 	      }
 
 	      return Break;
-
 	    })();
 
 	    LineBreaker.prototype.nextBreak = function() {
@@ -32327,18 +31883,14 @@
 	    };
 
 	    return LineBreaker;
-
 	  })();
 
 	  module.exports = LineBreaker;
-
 	}).call(this);
-
 
 /***/ },
 /* 92 */
 /***/ function(module, exports) {
-
 	// Generated by CoffeeScript 1.7.1
 	var UnicodeTrie,
 	  __slice = [].slice;
@@ -32421,16 +31973,13 @@
 	  };
 
 	  return UnicodeTrie;
-
 	})();
 
 	module.exports = UnicodeTrie;
 
-
 /***/ },
 /* 93 */
 /***/ function(module, exports) {
-
 	module.exports = {
 		"data": [
 			1961,
@@ -65057,7 +64606,6 @@
 /***/ },
 /* 94 */
 /***/ function(module, exports) {
-
 	// Generated by CoffeeScript 1.7.1
 	(function() {
 	  var AI, AL, B2, BA, BB, BK, CB, CJ, CL, CM, CP, CR, EX, GL, H2, H3, HL, HY, ID, IN, IS, JL, JT, JV, LF, NL, NS, NU, OP, PO, PR, QU, RI, SA, SG, SP, SY, WJ, XX, ZW;
@@ -65141,14 +64689,11 @@
 	  exports.SP = SP = 38;
 
 	  exports.XX = XX = 39;
-
 	}).call(this);
-
 
 /***/ },
 /* 95 */
 /***/ function(module, exports) {
-
 	// Generated by CoffeeScript 1.7.1
 	(function() {
 	  var CI_BRK, CP_BRK, DI_BRK, IN_BRK, PR_BRK;
@@ -65164,14 +64709,11 @@
 	  exports.PR_BRK = PR_BRK = 4;
 
 	  exports.pairTable = [[PR_BRK, PR_BRK, PR_BRK, PR_BRK, PR_BRK, PR_BRK, PR_BRK, PR_BRK, PR_BRK, PR_BRK, PR_BRK, PR_BRK, PR_BRK, PR_BRK, PR_BRK, PR_BRK, PR_BRK, PR_BRK, PR_BRK, PR_BRK, PR_BRK, CP_BRK, PR_BRK, PR_BRK, PR_BRK, PR_BRK, PR_BRK, PR_BRK, PR_BRK], [DI_BRK, PR_BRK, PR_BRK, IN_BRK, IN_BRK, PR_BRK, PR_BRK, PR_BRK, PR_BRK, IN_BRK, IN_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, IN_BRK, IN_BRK, DI_BRK, DI_BRK, PR_BRK, CI_BRK, PR_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK], [DI_BRK, PR_BRK, PR_BRK, IN_BRK, IN_BRK, PR_BRK, PR_BRK, PR_BRK, PR_BRK, IN_BRK, IN_BRK, IN_BRK, IN_BRK, IN_BRK, DI_BRK, DI_BRK, IN_BRK, IN_BRK, DI_BRK, DI_BRK, PR_BRK, CI_BRK, PR_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK], [PR_BRK, PR_BRK, PR_BRK, IN_BRK, IN_BRK, IN_BRK, PR_BRK, PR_BRK, PR_BRK, IN_BRK, IN_BRK, IN_BRK, IN_BRK, IN_BRK, IN_BRK, IN_BRK, IN_BRK, IN_BRK, IN_BRK, IN_BRK, PR_BRK, CI_BRK, PR_BRK, IN_BRK, IN_BRK, IN_BRK, IN_BRK, IN_BRK, IN_BRK], [IN_BRK, PR_BRK, PR_BRK, IN_BRK, IN_BRK, IN_BRK, PR_BRK, PR_BRK, PR_BRK, IN_BRK, IN_BRK, IN_BRK, IN_BRK, IN_BRK, IN_BRK, IN_BRK, IN_BRK, IN_BRK, IN_BRK, IN_BRK, PR_BRK, CI_BRK, PR_BRK, IN_BRK, IN_BRK, IN_BRK, IN_BRK, IN_BRK, IN_BRK], [DI_BRK, PR_BRK, PR_BRK, IN_BRK, IN_BRK, IN_BRK, PR_BRK, PR_BRK, PR_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, IN_BRK, IN_BRK, DI_BRK, DI_BRK, PR_BRK, CI_BRK, PR_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK], [DI_BRK, PR_BRK, PR_BRK, IN_BRK, IN_BRK, IN_BRK, PR_BRK, PR_BRK, PR_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, IN_BRK, IN_BRK, DI_BRK, DI_BRK, PR_BRK, CI_BRK, PR_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK], [DI_BRK, PR_BRK, PR_BRK, IN_BRK, IN_BRK, IN_BRK, PR_BRK, PR_BRK, PR_BRK, DI_BRK, DI_BRK, IN_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, IN_BRK, IN_BRK, DI_BRK, DI_BRK, PR_BRK, CI_BRK, PR_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK], [DI_BRK, PR_BRK, PR_BRK, IN_BRK, IN_BRK, IN_BRK, PR_BRK, PR_BRK, PR_BRK, DI_BRK, DI_BRK, IN_BRK, IN_BRK, IN_BRK, DI_BRK, DI_BRK, IN_BRK, IN_BRK, DI_BRK, DI_BRK, PR_BRK, CI_BRK, PR_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK], [IN_BRK, PR_BRK, PR_BRK, IN_BRK, IN_BRK, IN_BRK, PR_BRK, PR_BRK, PR_BRK, DI_BRK, DI_BRK, IN_BRK, IN_BRK, IN_BRK, IN_BRK, DI_BRK, IN_BRK, IN_BRK, DI_BRK, DI_BRK, PR_BRK, CI_BRK, PR_BRK, IN_BRK, IN_BRK, IN_BRK, IN_BRK, IN_BRK, DI_BRK], [IN_BRK, PR_BRK, PR_BRK, IN_BRK, IN_BRK, IN_BRK, PR_BRK, PR_BRK, PR_BRK, DI_BRK, DI_BRK, IN_BRK, IN_BRK, IN_BRK, DI_BRK, DI_BRK, IN_BRK, IN_BRK, DI_BRK, DI_BRK, PR_BRK, CI_BRK, PR_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK], [IN_BRK, PR_BRK, PR_BRK, IN_BRK, IN_BRK, IN_BRK, PR_BRK, PR_BRK, PR_BRK, IN_BRK, IN_BRK, IN_BRK, IN_BRK, IN_BRK, DI_BRK, IN_BRK, IN_BRK, IN_BRK, DI_BRK, DI_BRK, PR_BRK, CI_BRK, PR_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK], [IN_BRK, PR_BRK, PR_BRK, IN_BRK, IN_BRK, IN_BRK, PR_BRK, PR_BRK, PR_BRK, DI_BRK, DI_BRK, IN_BRK, IN_BRK, IN_BRK, DI_BRK, IN_BRK, IN_BRK, IN_BRK, DI_BRK, DI_BRK, PR_BRK, CI_BRK, PR_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK], [IN_BRK, PR_BRK, PR_BRK, IN_BRK, IN_BRK, IN_BRK, PR_BRK, PR_BRK, PR_BRK, DI_BRK, DI_BRK, IN_BRK, IN_BRK, IN_BRK, DI_BRK, IN_BRK, IN_BRK, IN_BRK, DI_BRK, DI_BRK, PR_BRK, CI_BRK, PR_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK], [DI_BRK, PR_BRK, PR_BRK, IN_BRK, IN_BRK, IN_BRK, PR_BRK, PR_BRK, PR_BRK, DI_BRK, IN_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, IN_BRK, IN_BRK, IN_BRK, DI_BRK, DI_BRK, PR_BRK, CI_BRK, PR_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK], [DI_BRK, PR_BRK, PR_BRK, IN_BRK, IN_BRK, IN_BRK, PR_BRK, PR_BRK, PR_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, IN_BRK, IN_BRK, IN_BRK, DI_BRK, DI_BRK, PR_BRK, CI_BRK, PR_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK], [DI_BRK, PR_BRK, PR_BRK, IN_BRK, DI_BRK, IN_BRK, PR_BRK, PR_BRK, PR_BRK, DI_BRK, DI_BRK, IN_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, IN_BRK, IN_BRK, DI_BRK, DI_BRK, PR_BRK, CI_BRK, PR_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK], [DI_BRK, PR_BRK, PR_BRK, IN_BRK, DI_BRK, IN_BRK, PR_BRK, PR_BRK, PR_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, IN_BRK, IN_BRK, DI_BRK, DI_BRK, PR_BRK, CI_BRK, PR_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK], [IN_BRK, PR_BRK, PR_BRK, IN_BRK, IN_BRK, IN_BRK, PR_BRK, PR_BRK, PR_BRK, IN_BRK, IN_BRK, IN_BRK, IN_BRK, IN_BRK, IN_BRK, IN_BRK, IN_BRK, IN_BRK, IN_BRK, IN_BRK, PR_BRK, CI_BRK, PR_BRK, IN_BRK, IN_BRK, IN_BRK, IN_BRK, IN_BRK, IN_BRK], [DI_BRK, PR_BRK, PR_BRK, IN_BRK, IN_BRK, IN_BRK, PR_BRK, PR_BRK, PR_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, IN_BRK, IN_BRK, DI_BRK, PR_BRK, PR_BRK, CI_BRK, PR_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK], [DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, PR_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK], [IN_BRK, PR_BRK, PR_BRK, IN_BRK, IN_BRK, IN_BRK, PR_BRK, PR_BRK, PR_BRK, DI_BRK, DI_BRK, IN_BRK, IN_BRK, IN_BRK, DI_BRK, IN_BRK, IN_BRK, IN_BRK, DI_BRK, DI_BRK, PR_BRK, CI_BRK, PR_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK], [IN_BRK, PR_BRK, PR_BRK, IN_BRK, IN_BRK, IN_BRK, PR_BRK, PR_BRK, PR_BRK, IN_BRK, IN_BRK, IN_BRK, IN_BRK, IN_BRK, IN_BRK, IN_BRK, IN_BRK, IN_BRK, IN_BRK, IN_BRK, PR_BRK, CI_BRK, PR_BRK, IN_BRK, IN_BRK, IN_BRK, IN_BRK, IN_BRK, IN_BRK], [DI_BRK, PR_BRK, PR_BRK, IN_BRK, IN_BRK, IN_BRK, PR_BRK, PR_BRK, PR_BRK, DI_BRK, IN_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, IN_BRK, IN_BRK, IN_BRK, DI_BRK, DI_BRK, PR_BRK, CI_BRK, PR_BRK, DI_BRK, DI_BRK, DI_BRK, IN_BRK, IN_BRK, DI_BRK], [DI_BRK, PR_BRK, PR_BRK, IN_BRK, IN_BRK, IN_BRK, PR_BRK, PR_BRK, PR_BRK, DI_BRK, IN_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, IN_BRK, IN_BRK, IN_BRK, DI_BRK, DI_BRK, PR_BRK, CI_BRK, PR_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, IN_BRK, DI_BRK], [DI_BRK, PR_BRK, PR_BRK, IN_BRK, IN_BRK, IN_BRK, PR_BRK, PR_BRK, PR_BRK, DI_BRK, IN_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, IN_BRK, IN_BRK, IN_BRK, DI_BRK, DI_BRK, PR_BRK, CI_BRK, PR_BRK, IN_BRK, IN_BRK, IN_BRK, IN_BRK, DI_BRK, DI_BRK], [DI_BRK, PR_BRK, PR_BRK, IN_BRK, IN_BRK, IN_BRK, PR_BRK, PR_BRK, PR_BRK, DI_BRK, IN_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, IN_BRK, IN_BRK, IN_BRK, DI_BRK, DI_BRK, PR_BRK, CI_BRK, PR_BRK, DI_BRK, DI_BRK, DI_BRK, IN_BRK, IN_BRK, DI_BRK], [DI_BRK, PR_BRK, PR_BRK, IN_BRK, IN_BRK, IN_BRK, PR_BRK, PR_BRK, PR_BRK, DI_BRK, IN_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, IN_BRK, IN_BRK, IN_BRK, DI_BRK, DI_BRK, PR_BRK, CI_BRK, PR_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, IN_BRK, DI_BRK], [DI_BRK, PR_BRK, PR_BRK, IN_BRK, IN_BRK, IN_BRK, PR_BRK, PR_BRK, PR_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, IN_BRK, IN_BRK, DI_BRK, DI_BRK, PR_BRK, CI_BRK, PR_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, DI_BRK, IN_BRK]];
-
 	}).call(this);
-
 
 /***/ },
 /* 96 */
 /***/ function(module, exports, __webpack_require__) {
-
 	/* WEBPACK VAR INJECTION */(function(Buffer) {// Generated by CoffeeScript 1.7.1
 	(function() {
 	  var PDFImage;
@@ -65252,7 +64794,6 @@
 	      return this;
 	    }
 	  };
-
 	}).call(this);
 
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2).Buffer))
@@ -65260,9 +64801,7 @@
 /***/ },
 /* 97 */
 /***/ function(module, exports, __webpack_require__) {
-
 	/* WEBPACK VAR INJECTION */(function(Buffer) {// Generated by CoffeeScript 1.7.1
-
 	/*
 	PDFImage - embeds images in PDF documents
 	By Devon Govett
@@ -65306,11 +64845,9 @@
 	    };
 
 	    return PDFImage;
-
 	  })();
 
 	  module.exports = PDFImage;
-
 	}).call(this);
 
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2).Buffer))
@@ -65318,7 +64855,6 @@
 /***/ },
 /* 98 */
 /***/ function(module, exports, __webpack_require__) {
-
 	// Generated by CoffeeScript 1.7.1
 	(function() {
 	  var JPEG, fs,
@@ -65391,18 +64927,14 @@
 	    };
 
 	    return JPEG;
-
 	  })();
 
 	  module.exports = JPEG;
-
 	}).call(this);
-
 
 /***/ },
 /* 99 */
 /***/ function(module, exports, __webpack_require__) {
-
 	/* WEBPACK VAR INJECTION */(function(Buffer) {// Generated by CoffeeScript 1.7.1
 	(function() {
 	  var PNG, PNGImage, zlib;
@@ -65555,11 +65087,9 @@
 	    };
 
 	    return PNGImage;
-
 	  })();
 
 	  module.exports = PNGImage;
-
 	}).call(this);
 
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2).Buffer))
@@ -65567,29 +65097,26 @@
 /***/ },
 /* 100 */
 /***/ function(module, exports, __webpack_require__) {
-
 	/* WEBPACK VAR INJECTION */(function(Buffer) {// Generated by CoffeeScript 1.4.0
-
 	/*
 	# MIT LICENSE
 	# Copyright (c) 2011 Devon Govett
-	# 
-	# Permission is hereby granted, free of charge, to any person obtaining a copy of this 
-	# software and associated documentation files (the "Software"), to deal in the Software 
-	# without restriction, including without limitation the rights to use, copy, modify, merge, 
-	# publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons 
+	#
+	# Permission is hereby granted, free of charge, to any person obtaining a copy of this
+	# software and associated documentation files (the "Software"), to deal in the Software
+	# without restriction, including without limitation the rights to use, copy, modify, merge,
+	# publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons
 	# to whom the Software is furnished to do so, subject to the following conditions:
-	# 
-	# The above copyright notice and this permission notice shall be included in all copies or 
+	#
+	# The above copyright notice and this permission notice shall be included in all copies or
 	# substantial portions of the Software.
-	# 
-	# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING 
-	# BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
-	# NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, 
-	# DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, 
+	#
+	# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING
+	# BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+	# NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+	# DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 	# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 	*/
-
 
 	(function() {
 	  var PNG, fs, zlib;
@@ -65599,7 +65126,6 @@
 	  zlib = __webpack_require__(47);
 
 	  module.exports = PNG = (function() {
-
 	    PNG.decode = function(path, fn) {
 	      return fs.readFile(path, function(err, file) {
 	        var png;
@@ -65881,9 +65407,7 @@
 	    };
 
 	    return PNG;
-
 	  })();
-
 	}).call(this);
 
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2).Buffer))
@@ -65891,7 +65415,6 @@
 /***/ },
 /* 101 */
 /***/ function(module, exports) {
-
 	// Generated by CoffeeScript 1.7.1
 	(function() {
 	  module.exports = {
@@ -66023,14 +65546,11 @@
 	      return [x1, y1, x2, y2];
 	    }
 	  };
-
 	}).call(this);
-
 
 /***/ },
 /* 102 */
 /***/ function(module, exports) {
-
 	module.exports = {
 		'4A0': [4767.87, 6740.79],
 		'2A0': [3370.39, 4767.87],
@@ -66084,11 +65604,9 @@
 		TABLOID: [792.00, 1224.00]
 	};
 
-
 /***/ },
 /* 103 */
 /***/ function(module, exports, __webpack_require__) {
-
 	/* WEBPACK VAR INJECTION */(function(Buffer) {/* jslint node: true */
 	'use strict';
 
@@ -66136,10 +65654,8 @@
 /***/ },
 /* 104 */
 /***/ function(module, exports) {
-
 	/* jslint node: true */
 	'use strict';
-
 
 	function groupDecorations(line) {
 		var groups = [], curGroup = null;
@@ -66158,11 +65674,10 @@
 				if(!curGroup || deco !== curGroup.decoration ||
 						style !== curGroup.decorationStyle || color !== curGroup.decorationColor ||
 						deco === 'lineThrough') {
-			
 					curGroup = {
 						line: line,
-						decoration: deco, 
-						decorationColor: color, 
+						decoration: deco,
+						decorationColor: color,
 						decorationStyle: style,
 						inlines: [ inline ]
 					};
@@ -66172,7 +65687,7 @@
 				}
 			}
 		}
-		
+
 		return groups;
 	}
 
@@ -66199,9 +65714,9 @@
 			ascent = biggerInline.font.ascender / 1000 * biggerInline.fontSize,
 			height = biggerInline.height,
 			descent = height - ascent;
-		
+
 		var lw = 0.5 + Math.floor(Math.max(biggerInline.fontSize - 8, 0) / 2) * 0.12;
-		
+
 		switch (group.decoration) {
 			case 'underline':
 				y += lineAscent + descent * 0.45;
@@ -66216,7 +65731,7 @@
 				throw 'Unkown decoration : ' + group.decoration;
 		}
 		pdfKitDoc.save();
-		
+
 		if(group.decorationStyle === 'double') {
 			var gap = Math.max(0.5, lw*2);
 			pdfKitDoc	.fillColor(group.decorationColor)
@@ -66253,7 +65768,6 @@
 					rwx += sh*6;
 				}
 			pdfKitDoc.stroke(group.decorationColor);
-			
 		} else {
 			pdfKitDoc	.fillColor(group.decorationColor)
 						.rect(x + firstInline.x, y-lw/2, totalWidth, lw)
@@ -66289,7 +65803,6 @@
 /***/ },
 /* 105 */
 /***/ function(module, exports, __webpack_require__) {
-
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(module) {/* FileSaver.js
 	 * A saveAs() FileSaver implementation.
 	 * 2014-08-29
@@ -66539,14 +66052,11 @@
 /***/ },
 /* 106 */
 /***/ function(module, exports) {
-
 	module.exports = function() { throw new Error("define cannot be used indirect"); };
-
 
 /***/ },
 /* 107 */
 /***/ function(module, exports) {
-
 	/* WEBPACK VAR INJECTION */(function(__webpack_amd_options__) {module.exports = __webpack_amd_options__;
 
 	/* WEBPACK VAR INJECTION */}.call(exports, {}))

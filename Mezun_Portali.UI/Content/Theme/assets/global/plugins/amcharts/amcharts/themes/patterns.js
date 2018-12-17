@@ -1,5 +1,4 @@
 AmCharts.themes.patterns = {
-
 	themeName:"patterns",
 
 	AmChart: {
@@ -31,7 +30,6 @@ AmCharts.themes.patterns = {
 		{"url":"patterns/black/pattern20.png", "width":4, "height":4},
 		{"url":"patterns/black/pattern21.png", "width":4, "height":4}]
 	},
-
 
 	AmStockChart: {
 		colors:["#000000","#000000","#000000","#000000","#000000","#000000","#000000","#000000","#000000","#000000","#000000","#000000","#000000","#000000","#000000","#000000","#000000","#000000","#000000","#000000","#000000"]
@@ -80,8 +78,6 @@ AmCharts.themes.patterns = {
 		zoomOutButtonImage: "lens.png"
 	},
 
-
-
 	AxisBase: {
 		axisColor: "#000000",
 		axisAlpha: 0.3,
@@ -122,7 +118,6 @@ AmCharts.themes.patterns = {
 		faceAlpha:0.5,
 		facePattern:{"url":"patterns/black/pattern1.png", "width":4, "height":4}
 	},
-
 
 	GaugeArrow: {
 		color: "#000000",
@@ -252,5 +247,4 @@ AmCharts.themes.patterns = {
 		border: "1px solid rgba(0, 0, 0, .3)",
 		outline: "none"
 	}
-
 };

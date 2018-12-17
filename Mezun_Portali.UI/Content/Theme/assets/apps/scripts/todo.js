@@ -2,11 +2,9 @@
 Todo Module
 **/
 var AppTodo = function () {
-
     // private functions & variables
 
     var _initComponents = function() {
-        
         // init datepicker
         $('.todo-taskbody-due').datepicker({
             rtl: App.isRTL(),
@@ -14,7 +12,7 @@ var AppTodo = function () {
             autoclose: true
         });
 
-        // init tags        
+        // init tags
         $(".todo-taskbody-tags").select2({
             tags: ["Testing", "Important", "Info", "Pending", "Completed", "Requested", "Approved"]
         });
@@ -30,19 +28,16 @@ var AppTodo = function () {
 
     // public functions
     return {
-
         //main function
         init: function () {
-            _initComponents();     
+            _initComponents();
             _handleProjectListMenu();
 
             App.addResizeHandler(function(){
-                _handleProjectListMenu();    
-            });       
+                _handleProjectListMenu();
+            });
         }
-
     };
-
 }();
 
 jQuery(document).ready(function() {

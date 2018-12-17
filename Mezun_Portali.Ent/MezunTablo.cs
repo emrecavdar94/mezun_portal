@@ -1,4 +1,4 @@
-namespace Mezun_Portali.Entities
+namespace Mezun_Portali.Ent
 {
     using System;
     using System.Collections.Generic;
@@ -19,6 +19,7 @@ namespace Mezun_Portali.Entities
             HobiBilgileri = new HashSet<HobiBilgileri>();
             IletisimBilgileri = new HashSet<IletisimBilgileri>();
             KariyerBilgileri = new HashSet<KariyerBilgileri>();
+            KullaniciAyarlari = new HashSet<KullaniciAyarlari>();
             Mesajlar = new HashSet<Mesajlar>();
             Mesajlar1 = new HashSet<Mesajlar>();
             Paylasimlar = new HashSet<Paylasimlar>();
@@ -88,6 +89,9 @@ namespace Mezun_Portali.Entities
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<KariyerBilgileri> KariyerBilgileri { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<KullaniciAyarlari> KullaniciAyarlari { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Mesajlar> Mesajlar { get; set; }

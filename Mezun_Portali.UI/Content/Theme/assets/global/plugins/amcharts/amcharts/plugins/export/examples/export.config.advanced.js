@@ -64,7 +64,6 @@ AmCharts.exportDrawingMenu = [ {
   } ]
 } ];
 
-
 /**
  * Define main universal config
  */

@@ -1,4 +1,4 @@
-namespace Mezun_Portali.Entities
+namespace Mezun_Portali.Ent
 {
     using System;
     using System.Collections.Generic;
@@ -6,22 +6,22 @@ namespace Mezun_Portali.Entities
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("IletisimBilgileri")]
-    public partial class IletisimBilgileri
+    [Table("SertifikaBilgileri")]
+    public partial class SertifikaBilgileri
     {
         public int Id { get; set; }
 
         public int KullaniciId { get; set; }
 
         [Required]
-        [StringLength(50)]
-        public string E_Mail { get; set; }
-
-        [Column(TypeName = "numeric")]
-        public decimal? Telefon { get; set; }
-
         [StringLength(250)]
-        public string Adres { get; set; }
+        public string Aciklama { get; set; }
+
+        [StringLength(150)]
+        public string Alinan_Kurum { get; set; }
+
+        [Column(TypeName = "date")]
+        public DateTime? Tarih { get; set; }
 
         public virtual MezunTablo MezunTablo { get; set; }
     }

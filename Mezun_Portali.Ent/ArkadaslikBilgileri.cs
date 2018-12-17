@@ -1,4 +1,4 @@
-namespace Mezun_Portali.Entities
+namespace Mezun_Portali.Ent
 {
     using System;
     using System.Collections.Generic;
@@ -6,22 +6,17 @@ namespace Mezun_Portali.Entities
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Paylasimlar")]
-    public partial class Paylasimlar
+    [Table("ArkadaslikBilgileri")]
+    public partial class ArkadaslikBilgileri
     {
         public int Id { get; set; }
 
         public int KullaniciId { get; set; }
 
-        [StringLength(500)]
-        public string Paylasim { get; set; }
-
-        [Column(TypeName = "date")]
-        public DateTime Paylasim_Tarihi { get; set; }
-
-        [StringLength(250)]
-        public string Medya { get; set; }
+        public int ArkadasId { get; set; }
 
         public virtual MezunTablo MezunTablo { get; set; }
+
+        public virtual MezunTablo MezunTablo1 { get; set; }
     }
 }

@@ -5857,12 +5857,6 @@
     <Folder Include="Content\Theme\assets\apps\img\" />
     <Folder Include="Content\Theme\assets\global\plugins\angularjs\plugins\angular-file-upload\uploads\" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Mezun_Portali.Entities\Mezun_Portali.Entities.csproj">
-      <Project>{ee2bbf7f-9052-44ed-bbc5-0baba501790d}</Project>
-      <Name>Mezun_Portali.Entities</Name>
-    </ProjectReference>
-  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

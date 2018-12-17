@@ -45,7 +45,6 @@ AmCharts.addInitHandler( function( chart ) {
 
   // defaults per chart type
   var defaults = {
-
     /**
      * AmPie
      */
@@ -488,7 +487,6 @@ AmCharts.addInitHandler( function( chart ) {
           }
         }
       },
-
 
       /**
        * Narrow chart
@@ -1050,7 +1048,6 @@ AmCharts.addInitHandler( function( chart ) {
   var noOriginalPropertyStub = {};
 
   var overrideProperty = function( object, property, overrideValue ) {
-
     var originalValueRetainerProperty = originalValueRetainerPrefix + property;
     if ( !( originalValueRetainerProperty in object ) ) {
       object[ originalValueRetainerProperty ] = ( property in object ) ? object[ property ] : noOriginalPropertyStub;
@@ -1111,10 +1108,8 @@ AmCharts.addInitHandler( function( chart ) {
 
       //current value is an array => override method depends on override form
       if ( isArray( currentValue ) ) {
-
         //override value is an array => override method depends on array elements
         if ( isArray( overrideValue ) ) {
-
           //current value is an array of non-objects => override the entire array
           //we assume a uniformly-typed array, so checking the first value should suffice
           if ( ( currentValue.length > 0 && !isObject( currentValue[ 0 ] ) ) || ( overrideValue.length > 0 && !isObject( overrideValue[ 0 ] ) ) ) {
@@ -1175,7 +1170,6 @@ AmCharts.addInitHandler( function( chart ) {
   };
 
   var checkRules = function() {
-
     var width = chart.divRealWidth;
     var height = chart.divRealHeight;
 
@@ -1237,5 +1231,4 @@ AmCharts.addInitHandler( function( chart ) {
 
   chart.addListener( 'resized', checkRules );
   chart.addListener( 'init', checkRules );
-
 }, [ 'pie', 'serial', 'xy', 'funnel', 'radar', 'gauge', 'gantt', 'stock', 'map' ] );
