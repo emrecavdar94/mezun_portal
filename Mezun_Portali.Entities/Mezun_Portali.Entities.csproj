@@ -31,8 +31,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,7 +50,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adminler.cs" />
+    <Compile Include="ArkadaslikBilgileri.cs" />
+    <Compile Include="Bildirimler.cs" />
+    <Compile Include="Duyurular.cs" />
+    <Compile Include="EgitimBilgileri.cs" />
+    <Compile Include="HobiBilgileri.cs" />
+    <Compile Include="IletisimBilgileri.cs" />
+    <Compile Include="KariyerBilgileri.cs" />
+    <Compile Include="KimlikBilgileri.cs" />
+    <Compile Include="KullaniciAyarlari.cs" />
+    <Compile Include="Mesajlar.cs" />
+    <Compile Include="Messages\ErrorMessageCode.cs" />
+    <Compile Include="Messages\ErrorMessageObj.cs" />
+    <Compile Include="MezunTablo.cs" />
+    <Compile Include="Paylasimlar.cs" />
+    <Compile Include="ProjeBilgileri.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SertifikaBilgileri.cs" />
+    <Compile Include="sysdiagrams.cs" />
+    <Compile Include="ValueObjects\LoginViewModel.cs" />
+    <Compile Include="ValueObjects\RegisterViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

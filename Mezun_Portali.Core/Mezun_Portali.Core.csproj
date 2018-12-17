@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{58243B0F-2CA4-460E-B701-6832410E612E}</ProjectGuid>
+    <ProjectGuid>{7C42D2BE-A13B-496F-B754-B741DFDD32BB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Mezun_Portali.DataAccessLAyer</RootNamespace>
-    <AssemblyName>Mezun_Portali.DataAccessLAyer</AssemblyName>
+    <RootNamespace>Mezun_Portali.Core</RootNamespace>
+    <AssemblyName>Mezun_Portali.Core</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -31,14 +31,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -48,24 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EntityFramework\DatabaseContext.cs" />
-    <Compile Include="EntityFramework\Repository.cs" />
-    <Compile Include="EntityFramework\RepositoryBase.cs" />
+    <Compile Include="DataAccess\IDataAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Mezun_Portali.Core\Mezun_Portali.Core.csproj">
-      <Project>{7c42d2be-a13b-496f-b754-b741dfdd32bb}</Project>
-      <Name>Mezun_Portali.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Mezun_Portali.Entities\Mezun_Portali.Entities.csproj">
-      <Project>{ee2bbf7f-9052-44ed-bbc5-0baba501790d}</Project>
-      <Name>Mezun_Portali.Entities</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

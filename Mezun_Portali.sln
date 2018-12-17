@@ -17,6 +17,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mezun_Portali.DataAccessLAy
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mezun_Portali.Entities", "Mezun_Portali.Entities\Mezun_Portali.Entities.csproj", "{EE2BBF7F-9052-44ED-BBC5-0BABA501790D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{4663B188-B458-40F0-BCB5-8832F73152F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mezun_Portali.Core", "Mezun_Portali.Core\Mezun_Portali.Core.csproj", "{7C42D2BE-A13B-496F-B754-B741DFDD32BB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,10 @@ Global
 		{EE2BBF7F-9052-44ED-BBC5-0BABA501790D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE2BBF7F-9052-44ED-BBC5-0BABA501790D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE2BBF7F-9052-44ED-BBC5-0BABA501790D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C42D2BE-A13B-496F-B754-B741DFDD32BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C42D2BE-A13B-496F-B754-B741DFDD32BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C42D2BE-A13B-496F-B754-B741DFDD32BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C42D2BE-A13B-496F-B754-B741DFDD32BB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -47,6 +55,7 @@ Global
 		{1D214922-29AC-4DB1-8D98-E393254A5809} = {92FA5C45-884B-4045-808A-A855277D4970}
 		{58243B0F-2CA4-460E-B701-6832410E612E} = {86559875-7314-442A-AEA6-D95A5F526E21}
 		{EE2BBF7F-9052-44ED-BBC5-0BABA501790D} = {298B36ED-E4B0-49E4-805D-08D2B7F345B5}
+		{7C42D2BE-A13B-496F-B754-B741DFDD32BB} = {4663B188-B458-40F0-BCB5-8832F73152F1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {60EF4D79-7E21-4058-BB49-8687ABC17E59}
