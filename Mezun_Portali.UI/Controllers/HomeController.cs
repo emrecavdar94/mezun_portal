@@ -17,7 +17,7 @@ namespace Mezun_Portali.UI.Controllers
         {
             return View();
         }
-        public ActionResult AnnouncementText(int? id)
+        public ActionResult AnnouncementText(int? idd)
         {
             return View();
         }
