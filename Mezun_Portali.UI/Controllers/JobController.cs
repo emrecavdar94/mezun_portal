@@ -11,10 +11,12 @@ namespace Mezun_Portali.UI.Controllers
         // GET: Job
         public ActionResult Index()
         {
+            //İş İlanlarının Listelendiği Sayfa
             return View();
         }
         public ActionResult NewJob()
         {
+            //İş İlanı Yayınlama
             return View();
         }
     }
