@@ -93,6 +93,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\EkCssDosyaları\Gonderi.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\Theme\assets\apps\css\inbox.css" />
     <Content Include="Content\Theme\assets\apps\css\inbox.min.css" />
@@ -5857,6 +5858,16 @@
     <Folder Include="App_Data\" />
     <Folder Include="Content\Theme\assets\apps\img\" />
     <Folder Include="Content\Theme\assets\global\plugins\angularjs\plugins\angular-file-upload\uploads\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Mezun_Portali.BusinessLayer\Mezun_Portali.BusinessLayer.csproj">
+      <Project>{1d214922-29ac-4db1-8d98-e393254a5809}</Project>
+      <Name>Mezun_Portali.BusinessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mezun_Portali.Ent\Mezun_Portali.Ent.csproj">
+      <Project>{bbaf6f3c-1a64-4392-acdd-823602e17ca4}</Project>
+      <Name>Mezun_Portali.Ent</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

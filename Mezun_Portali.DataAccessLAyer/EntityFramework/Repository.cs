@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Mezun_Portali.DataAccessLAyer.EntityFramework
 {
-   public class Repository<T> :RepositoryBase,IDataAccess where T : class
+   public class Repository<T> :RepositoryBase,IDataAccess<T> where T : class
     {
         private DbSet<T> _objectSet;
 

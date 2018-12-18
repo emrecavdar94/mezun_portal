@@ -18,7 +18,7 @@ namespace Mezun_Portali.Ent
         public int Id { get; set; }
 
         [Required]
-        [StringLength(250)]
+        [StringLength(50)]
         public string IlanBasligi { get; set; }
 
         [Required]
@@ -41,6 +41,9 @@ namespace Mezun_Portali.Ent
         public string Dil { get; set; }
 
         public int IletisimId { get; set; }
+
+        [Column(TypeName = "date")]
+        public DateTime Tarih { get; set; }
 
         public virtual AskerlikDurum AskerlikDurum { get; set; }
 

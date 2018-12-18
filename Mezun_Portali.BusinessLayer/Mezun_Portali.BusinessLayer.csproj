@@ -41,7 +41,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\ManagerBase.cs" />
+    <Compile Include="JobManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Results\BusinessLayerResult.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Mezun_Portali.Common\Mezun_Portali.Common.csproj">
+      <Project>{07cb0143-d5f3-4db6-bf26-4616968372a2}</Project>
+      <Name>Mezun_Portali.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mezun_Portali.Core\Mezun_Portali.Core.csproj">
+      <Project>{7c42d2be-a13b-496f-b754-b741dfdd32bb}</Project>
+      <Name>Mezun_Portali.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mezun_Portali.DataAccessLAyer\Mezun_Portali.DataAccessLAyer.csproj">
+      <Project>{58243b0f-2ca4-460e-b701-6832410e612e}</Project>
+      <Name>Mezun_Portali.DataAccessLAyer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mezun_Portali.Ent\Mezun_Portali.Ent.csproj">
+      <Project>{bbaf6f3c-1a64-4392-acdd-823602e17ca4}</Project>
+      <Name>Mezun_Portali.Ent</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
