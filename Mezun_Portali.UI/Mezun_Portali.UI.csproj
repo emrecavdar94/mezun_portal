@@ -1,4 +1,5 @@
-﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -5840,12 +5841,12 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.9.0.min.map" />
     <Content Include="Views\Home\Announcement.cshtml" />
-    <Content Include="Views\Home\AnnouncementText.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Account\EKSP.cshtml" />
     <Content Include="Views\Account\AccountDetails.cshtml" />
     <Content Include="Views\Job\Index.cshtml" />
     <Content Include="Views\Job\NewJob.cshtml" />
+    <Content Include="Views\Home\AnnouncementText.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
