@@ -5810,7 +5810,7 @@
     <Content Include="Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\AnaSayfa.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\Index.cshtml" />
     <Content Include="Views\Account\Friends.cshtml" />
   </ItemGroup>
@@ -5839,13 +5839,13 @@
     <Content Include="Views\web.config" />
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.9.0.min.map" />
-    <Content Include="Views\Home\Duyurular.cshtml" />
+    <Content Include="Views\Home\Announcement.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Account\EKSP.cshtml" />
     <Content Include="Views\Account\AccountDetails.cshtml" />
     <Content Include="Views\Job\Index.cshtml" />
     <Content Include="Views\Job\NewJob.cshtml" />
-    <Content Include="Views\Home\DuyuruMetini.cshtml" />
+    <Content Include="Views\Home\AnnouncementText.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

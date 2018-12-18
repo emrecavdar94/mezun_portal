@@ -9,15 +9,15 @@ namespace Mezun_Portali.UI.Controllers
     public class HomeController : Controller
     {
         // GET: Home
-        public ActionResult AnaSayfa()
+        public ActionResult Index()
         {
             return View();
         }
-        public ActionResult Duyurular()
+        public ActionResult Announcement()
         {
             return View();
         }
-        public ActionResult DuyuruMetini()
+        public ActionResult AnnouncementText( int? idd)
         {
             return View();
         }
