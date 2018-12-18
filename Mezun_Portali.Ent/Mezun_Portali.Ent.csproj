@@ -57,6 +57,7 @@
     <Compile Include="dbMezun.cs" />
     <Compile Include="Duyurular.cs" />
     <Compile Include="EgitimBilgileri.cs" />
+    <Compile Include="ErrorMessageObj.cs" />
     <Compile Include="HobiBilgileri.cs" />
     <Compile Include="Ilan.cs" />
     <Compile Include="IlanIletisim.cs" />

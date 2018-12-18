@@ -1,4 +1,4 @@
-﻿using Mezun_Portali.Entities.Messages;
+﻿using Mezun_Portali.Ent;
 using System;
 using System.Collections.Generic;
 using System.Linq;
