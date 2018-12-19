@@ -5,17 +5,22 @@
 }
 
 <div class="portlet light bordered">
-    
+    @using (Html.BeginForm("Emre", "Job", FormMethod.Post,
+                                                          new { enctype = "multipart/form-data" }))
+    {
     <div class="portlet-body form">
         <!-- BEGIN FORM-->
+
         <form action="#" class="horizontal-form">
+         
             <div class="form-body">
                 <h3 class="form-section">İş İlanı Bilgileri</h3>
+
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
                             <label class="control-label">İlan Başlığı</label>
-                            <input type="text" id="firstName" class="form-control" placeholder="İlan Başlığını Giriniz!">
+                            <input type="text" id="IlanBasligi" name="jobIlanbasligi" class="form-control" placeholder="İlan Başlığını Giriniz!">
                             
                         </div>
                     </div>
@@ -23,7 +28,7 @@
                     <div class="col-md-6">
                         <div class="form-group ">
                             <label class="control-label">Çalışma Şekli</label>
-                            <input type="text" id="lastName" class="form-control" placeholder="Çalışma Şeklini Giriniz!">
+                            <input type="text" id="CalismaSekli" name="jobCalismasekli" class="form-control" placeholder="Çalışma Şeklini Giriniz!">
                          
                         </div>
                     </div>
@@ -34,7 +39,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label class="control-label">Sektör</label>
-                            <input type="text" id="lastName" class="form-control" placeholder="Sektör'ü Giriniz!">
+                            <input type="text" id="Sektor" name="jobSektor" class="form-control" placeholder="Sektör'ü Giriniz!">
                         
                         </div>
                     </div>
@@ -42,7 +47,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label class="control-label">Eğitim</label>
-                            <input type="text" id="lastName" class="form-control" placeholder="Eğitim Bilgilerini Giriniz!">
+                            <input type="text" id="Egitim" name="jobEgitim" class="form-control" placeholder="Eğitim Bilgilerini Giriniz!">
                         </div>
                     </div>
                     <!--/span-->
@@ -52,14 +57,14 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label class="control-label">Pozisyon </label>
-                            <input type="text" id="firstName" class="form-control" placeholder="Pozisyonu Giriniz!">
+                            <input type="text" id="Pozisyon" name="jobPozisyon" class="form-control" placeholder="Pozisyonu Giriniz!">
                         </div>
                     </div>
                     <!--/span-->
                     <div class="col-md-6">
                         <div class="form-group">
                             <label class="control-label">Dil</label>
-                            <input type="text" id="lastName" class="form-control" placeholder="Dil Bilgisini Giriniz!">
+                            <input type="text" id="Dil" name="jobDil" class="form-control" placeholder="Dil Bilgisini Giriniz!">
                         </div>
                     </div>
                     <!--/span-->
@@ -67,7 +72,7 @@
                          <div class="col-md-6">
                              <div class="form-group">
                              <label class="control-label">Açıklama </label>
-                             <input type="text" id="firstName" class="form-control" placeholder="Açıklama  Giriniz!">
+                             <input type="text" id="Aciklama" name="jobAciklama" class="form-control" placeholder="Açıklama  Giriniz!">
                          </div>
                     </div>
                 
@@ -84,14 +89,14 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label>Telefon</label>
-                            <input type="text" id="firstName" class="form-control" placeholder="Telefon Bilgisini Giriniz!">
+                            <input type="text" id="Telefon"  name="jobTelefon" class="form-control" placeholder="Telefon Bilgisini Giriniz!">
                         </div>
                     </div>
                     <!--/span-->
                     <div class="col-md-6">
                         <div class="form-group">
                             <label>E-Posta</label>
-                            <input type="text" id="firstName" class="form-control" placeholder="Eposta Bilgisini Giriniz!">
+                            <input type="text" id="Eposta" name="jobEposta" class="form-control" placeholder="E-posta Bilgisini Giriniz!">
                         </div>
                     </div>
                     <!--/span-->
@@ -101,7 +106,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label>Adres</label>
-                            <input type="text" id="firstName" class="form-control" placeholder="Adres Bilgisini Giriniz!">
+                            <input type="text" id="Adres" name="jobAdres" class="form-control" placeholder="Adres Bilgisini Giriniz!">
                         </div>
                     </div>
                     <!--/span-->
@@ -110,11 +115,13 @@
                 </div>
             </div>
             <div class="form-actions right">
-                <button type="submit" class="btn green">
-                    <i class="fa fa-check"></i> Kaydet
-                </button>
+                <button type="submit">Kaydet</button>
+               
             </div>
+               
         </form>
         <!-- END FORM-->
-    </div>
+
+            </div>
+    }
 </div>
