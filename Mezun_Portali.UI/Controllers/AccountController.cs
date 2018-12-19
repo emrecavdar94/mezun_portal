@@ -22,24 +22,31 @@ namespace Mezun_Portali.UI.Controllers
         // GET: Account
         public ActionResult Index()
         {
+            //Kişinin Anasayfası
             return View();
         }
         public ActionResult Friends()
         {
+            //Kişinin Arkadaşları Görüntüleniyor
             return View();
         }
         public ActionResult EKSP()
         {
+<<<<<<< HEAD
 
             return View();
         }
         [HttpPost]
         public ActionResult KariyerEkle(DateTime kariyeayrilmatarihi, string kariyerfirmaadi,string  kariyerpozisyon,DateTime kariyergiristarihi)
         {
+=======
+            //Eğitim-Proje-Kariyer-Sertifika Bilgi Sayfası
+>>>>>>> 19ea0aa13230bdea7bda23b81a2189f62776bceb
             return View();
         }
         public ActionResult AccountDetails()
         {
+            //Profil Bilgilerini Güncelleme
             return View();
         }
     }

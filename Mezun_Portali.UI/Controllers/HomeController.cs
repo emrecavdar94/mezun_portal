@@ -11,14 +11,17 @@ namespace Mezun_Portali.UI.Controllers
         // GET: Home
         public ActionResult Index()
         {
+            //AnaSyafa
             return View();
         }
         public ActionResult Announcement()
         {
+            //Duyurular
             return View();
         }
         public ActionResult AnnouncementText( int? idd)
         {
+            //Duyurular Metin
             return View();
         }
 
