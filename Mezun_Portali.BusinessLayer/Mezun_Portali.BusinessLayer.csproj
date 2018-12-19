@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="Abstract\ManagerBase.cs" />
     <Compile Include="JobManager.cs" />
+    <Compile Include="KariyerBilgileriManager.cs" />
     <Compile Include="MezunManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Results\BusinessLayerResult.cs" />

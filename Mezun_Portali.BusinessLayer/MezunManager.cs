@@ -42,7 +42,21 @@ namespace Mezun_Portali.BusinessLayer
                     });
                 }
             }
-        }
+            return res;
 
+        }
+      public  BusinessLayerResult<MezunTablo> Bul (int id)
+        {
+            BusinessLayerResult<MezunTablo> res = new BusinessLayerResult<MezunTablo>();
+            MezunTablo mezun = Find(x => x.Id == id);
+            res.Result = mezun;
+            if (res==null)
+            {
+                res.AddError(ErrorMessageCode.UserCouldNotFind, "Mezun Bulunamadı.");
+
+            }
+
+            return res;
+        }
     }
 }

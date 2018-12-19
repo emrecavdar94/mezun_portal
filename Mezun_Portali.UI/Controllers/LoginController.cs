@@ -13,5 +13,9 @@ namespace Mezun_Portali.UI.Controllers
         {
             return View();
         }
+        public  ActionResult Register()
+        {
+            return View();
+        }
     }
 }
