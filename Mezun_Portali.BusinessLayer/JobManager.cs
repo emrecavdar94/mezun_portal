@@ -25,6 +25,35 @@ namespace Mezun_Portali.BusinessLayer
             }
             return res ;
         }
+        public BusinessLayerResult<Ilan> Kayit(Ilan data)
+        {
 
+            BusinessLayerResult<Ilan> res = new BusinessLayerResult<Ilan>();
+
+
+            ICollection<IlanNitelik> listNitelik = new List<IlanNitelik>();
+            listNitelik = data.IlanNitelik;
+            Ilan ilan = new Ilan();
+            ilan.IlanBasligi = data.IlanBasligi;
+            ilan.Sektor = data.Sektor;
+            ilan.Pozisyon = data.Pozisyon;
+            ilan.Adres = data.Adres;
+            ilan.CalismaSekli = data.CalismaSekli;
+            ilan.Egitim = data.Egitim;
+            ilan.IlanNitelik = listNitelik;
+            ilan.Dil = data.Dil;
+            ilan.IletisimId = data.IlanIletisim.Id;
+
+            IlanIletisim ilaniletisim = new IlanIletisim();
+            ilaniletisim.Eposta = data.IlanIletisim.Eposta;
+            ilaniletisim.Tel = data.IlanIletisim.Tel;
+            ilan.IlanIletisim = ilaniletisim;
+            Insert(ilan);
+
+
+
+            return res;
+
+        }
     }
 }

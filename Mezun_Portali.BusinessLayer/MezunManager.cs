@@ -15,8 +15,9 @@ namespace Mezun_Portali.BusinessLayer
     {
         public BusinessLayerResult<MezunTablo> Kayit(RegisterViewModel data)
         {
-            MezunTablo mezun = Find(x => x.Kullanici_Adi == data.Kullanici_Adi || x.Mail == data.Mail);
             BusinessLayerResult<MezunTablo> res = new BusinessLayerResult<MezunTablo>();
+            MezunTablo mezun = Find(x => x.Kullanici_Adi == data.Kullanici_Adi || x.Mail == data.Mail);
+           
             if (mezun != null)
             {
                 if (mezun.Kullanici_Adi==data.Kullanici_Adi)
@@ -56,6 +57,21 @@ namespace Mezun_Portali.BusinessLayer
 
             }
 
+            return res;
+        }
+        public BusinessLayerResult<MezunTablo> Giris(RegisterViewModel data)
+        {
+            BusinessLayerResult<MezunTablo> res = new BusinessLayerResult<MezunTablo>();
+            MezunTablo mezun = Find(x => x.Kullanici_Adi == data.Kullanici_Adi || x.Mail == data.Mail && x.Sifre==data.Sifre);
+            res.Result = mezun;
+            if (mezun==null)
+            {
+                res.AddError(ErrorMessageCode.UserCouldNotFind,"Hatalı Giriş")
+            }
+            else
+            {
+
+            }
             return res;
         }
     }
