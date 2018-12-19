@@ -32,16 +32,15 @@ namespace Mezun_Portali.UI.Controllers
         }
         public ActionResult EKSP()
         {
-<<<<<<< HEAD
+
 
             return View();
         }
         [HttpPost]
         public ActionResult KariyerEkle(DateTime kariyeayrilmatarihi, string kariyerfirmaadi,string  kariyerpozisyon,DateTime kariyergiristarihi)
         {
-=======
-            //Eğitim-Proje-Kariyer-Sertifika Bilgi Sayfası
->>>>>>> 19ea0aa13230bdea7bda23b81a2189f62776bceb
+
+           
             return View();
         }
         public ActionResult AccountDetails()
