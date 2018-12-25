@@ -14,8 +14,12 @@ namespace Mezun_Portali.Ent
         public int AdminId { get; set; }
 
         [Required]
-        [StringLength(250)]
+        [StringLength(500)]
         public string Duyuru { get; set; }
+
+        [Required]
+        [StringLength(100)]
+        public string DuyuruBaslik { get; set; }
 
         [Column(TypeName = "date")]
         public DateTime Duyuru_Tarihi { get; set; }

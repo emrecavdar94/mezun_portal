@@ -17,10 +17,13 @@ namespace Mezun_Portali.Ent.ValueObjects
        
         public string Soyad { get; set; }
 
-        
-        public decimal Fakulte_No { get; set; }
+        [Required(ErrorMessage = "{0} alanı boş geçilemez."), DisplayName("Tc Kimlik No")]
+        [StringLength(11, ErrorMessage = "{0} max. {1} karakter olmalıdır.")]
+        public string TcKimlik { get; set; }
+        [DisplayName("Tc Kimlik No")]
+        public string DogumYeri { get; set; }
 
-        public decimal? Telefon { get; set; } //?
+        public decimal Fakulte_No { get; set; }
 
         [Required(ErrorMessage ="{0} alanı boş geçilemez."),DisplayName("Kullanıcı Adı")]
         [StringLength(50,ErrorMessage ="{0} alanı max. {1} uzunluğunda olmalıdır.")]
@@ -29,7 +32,8 @@ namespace Mezun_Portali.Ent.ValueObjects
         [Required(ErrorMessage = "{0} alanı boş geçilemez."),DataType(DataType.Password),DisplayName("Şifre")]
         [StringLength(50,ErrorMessage =("{0} max. {1} karakter olmalı."))]
         public string Sifre { get; set; }
-
+        [DataType(DataType.Date),DisplayName("Şifre")]
+        public DateTime DogumTarihi { get; set; }
 
         [DisplayName("Şifre Tekrar"),Required(ErrorMessage ="{0} alanı boş geçilemez."),DataType(DataType.Password), StringLength(50, ErrorMessage = ("{0} max. {1} karakter olmalı.")),Compare("Sifre",ErrorMessage ="{0} ile {1} uyuşmamaktadır.")]
         public string SifreTekrar { get; set; }
@@ -39,7 +43,7 @@ namespace Mezun_Portali.Ent.ValueObjects
         [DisplayName("E-posta"),
             Required(ErrorMessage = "{0} alanı boş geçilemez."),
             StringLength(50, ErrorMessage = "{0} max. {1} karakter olmalı."),
-            EmailAddress(ErrorMessage = "{0} alanı için geçerli bir e-posta adresi giriniz."),DataType(DataType.EmailAddress,ErrorMessage ="Lütfen kurallara uygun bir mail adresi giriniz.")]
+            EmailAddress(ErrorMessage = "{0} alanı için geçerli bir e-posta adresi giriniz.")]
         public string Mail { get; set; }
 
         

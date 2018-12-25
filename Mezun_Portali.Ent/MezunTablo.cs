@@ -19,6 +19,7 @@ namespace Mezun_Portali.Ent
             HobiBilgileri = new HashSet<HobiBilgileri>();
             IletisimBilgileri = new HashSet<IletisimBilgileri>();
             KariyerBilgileri = new HashSet<KariyerBilgileri>();
+           
             KullaniciAyarlari = new HashSet<KullaniciAyarlari>();
             Mesajlar = new HashSet<Mesajlar>();
             Mesajlar1 = new HashSet<Mesajlar>();
@@ -36,9 +37,7 @@ namespace Mezun_Portali.Ent
         [Required]
         [StringLength(50)]
         public string Soyad { get; set; }
-
-        [Column(TypeName = "numeric")]
-        public decimal Fakulte_No { get; set; }
+        
 
         [StringLength(250)]
         public string Fotograf { get; set; }
@@ -53,6 +52,15 @@ namespace Mezun_Portali.Ent
         [Required]
         [StringLength(50)]
         public string Sifre { get; set; }
+
+        [StringLength(11)]
+        public string Tc_No { get; set; }
+
+        [Column(TypeName = "date")]
+        public DateTime? DogumTarihi { get; set; }
+
+        [StringLength(50)]
+        public string DogumYeri { get; set; }
 
         public bool Onaylandi { get; set; }
 
@@ -93,6 +101,7 @@ namespace Mezun_Portali.Ent
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<KullaniciAyarlari> KullaniciAyarlari { get; set; }
 
+        
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Mesajlar> Mesajlar { get; set; }
 

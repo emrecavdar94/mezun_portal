@@ -20,6 +20,10 @@ namespace Mezun_Portali.Ent.Messages
         UserCouldNotRemove = 158,
         UserCouldNotFind = 159,
         UserCouldNotInserted = 160,
-        UserCouldNotUpdated = 161
+        UserCouldNotUpdated = 161,
+        AnnouncementCouldNotRemove = 162,
+        AnnouncementCouldNotFind = 163,
+        AnnouncementCouldNotInserted = 164,
+        AnnouncementCouldNotUpdated = 165
     }
 }

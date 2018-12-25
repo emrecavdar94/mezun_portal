@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\ManagerBase.cs" />
+    <Compile Include="AnnouncementManager.cs" />
     <Compile Include="JobManager.cs" />
     <Compile Include="KariyerBilgileriManager.cs" />
     <Compile Include="MezunManager.cs" />

@@ -28,7 +28,7 @@ namespace Mezun_Portali.DataAccessLAyer
             public virtual DbSet<IlanNitelik> IlanNitelik { get; set; }
             public virtual DbSet<IletisimBilgileri> IletisimBilgileri { get; set; }
             public virtual DbSet<KariyerBilgileri> KariyerBilgileri { get; set; }
-            public virtual DbSet<KimlikBilgileri> KimlikBilgileri { get; set; }
+          
             public virtual DbSet<KullaniciAyarlari> KullaniciAyarlari { get; set; }
             public virtual DbSet<Mesajlar> Mesajlar { get; set; }
             public virtual DbSet<MezunTablo> MezunTablo { get; set; }
@@ -58,14 +58,7 @@ namespace Mezun_Portali.DataAccessLAyer
                     .Property(e => e.Telefon)
                     .HasPrecision(18, 0);
 
-                modelBuilder.Entity<KimlikBilgileri>()
-                    .Property(e => e.Tc_No)
-                    .HasPrecision(18, 0);
-
-                modelBuilder.Entity<MezunTablo>()
-                    .Property(e => e.Fakulte_No)
-                    .HasPrecision(18, 0);
-
+           
                 modelBuilder.Entity<MezunTablo>()
                     .Property(e => e.Telefon)
                     .HasPrecision(18, 0);
@@ -76,7 +69,9 @@ namespace Mezun_Portali.DataAccessLAyer
                     .HasForeignKey(e => e.KullaniciId)
                     .WillCascadeOnDelete(false);
 
-                modelBuilder.Entity<MezunTablo>()
+              
+
+            modelBuilder.Entity<MezunTablo>()
                     .HasMany(e => e.ArkadaslikBilgileri1)
                     .WithRequired(e => e.MezunTablo1)
                     .HasForeignKey(e => e.ArkadasId)

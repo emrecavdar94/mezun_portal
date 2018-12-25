@@ -22,7 +22,7 @@ namespace Mezun_Portali.UI.Controllers
             ilanList = jobResult.ResultList;
             
 
-            return View(ilanList);
+            return View(jobResult);
         }
         public ActionResult NewJob()
         {
@@ -31,7 +31,7 @@ namespace Mezun_Portali.UI.Controllers
         }
 
         [HttpPost]
-        public ActionResult NewJob(string jobIlanbasligi,string jobSektor,string jobPozisyon,string jobAdres, string jobCalismasekli,string jobEgitim,string jobDil,string jobAciklama,string jobTelefon, string jobEposta)
+        public ActionResult NewJob(string [] ilannitelik,string jobIlanbasligi,string jobSektor,string jobPozisyon,string jobAdres, string jobCalismasekli,string jobEgitim,string jobDil,string jobAciklama,string jobTelefon, string jobEposta )
         {
             Ilan ilan = new Ilan();
             IlanIletisim ilanIletisim = new IlanIletisim();
@@ -47,15 +47,12 @@ namespace Mezun_Portali.UI.Controllers
             ilanIletisim.Eposta = jobEposta;
             ilan.Adres = jobAdres;
             ilan.Tarih = DateTime.Now;
+            ilan.IlanIletisim = ilanIletisim;
             jobResult = jobManager.Kayit(ilan);
             
             return View(jobResult);
         }
-        [HttpPost]
-        public ActionResult Emre()
-        {
-            return View();
-        }
+        
         
     }
 }

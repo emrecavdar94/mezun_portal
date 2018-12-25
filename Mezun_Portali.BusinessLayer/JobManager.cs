@@ -35,6 +35,10 @@ namespace Mezun_Portali.BusinessLayer
             ICollection<IlanNitelik> listNitelik = new List<IlanNitelik>();
             listNitelik = data.IlanNitelik;
             Ilan ilan = new Ilan();
+            IlanIletisim ilaniletisim = new IlanIletisim();
+            ilaniletisim.Eposta = data.IlanIletisim.Eposta;
+            ilaniletisim.Tel = data.IlanIletisim.Tel;
+            ilan.IlanIletisim = ilaniletisim;
             ilan.IlanBasligi = data.IlanBasligi;
                ilan.Sektor = data.Sektor;
                ilan.Pozisyon = data.Pozisyon;
@@ -45,10 +49,7 @@ namespace Mezun_Portali.BusinessLayer
                ilan.Dil = data.Dil;
                ilan.IletisimId = data.IlanIletisim.Id;
             ilan.Tarih = data.Tarih;
-               IlanIletisim ilaniletisim = new IlanIletisim();
-            ilaniletisim.Eposta = data.IlanIletisim.Eposta;
-            ilaniletisim.Tel = data.IlanIletisim.Tel;
-            ilan.IlanIletisim = ilaniletisim;
+              
             Insert(ilan);
            
 

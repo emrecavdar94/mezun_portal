@@ -17,32 +17,41 @@ namespace Mezun_Portali.BusinessLayer
         {
             BusinessLayerResult<MezunTablo> res = new BusinessLayerResult<MezunTablo>();
             MezunTablo mezun = Find(x => x.Kullanici_Adi == data.Kullanici_Adi || x.Mail == data.Mail);
-           
+
+
+
             if (mezun != null)
             {
-                if (mezun.Kullanici_Adi==data.Kullanici_Adi)
+                if (mezun.Kullanici_Adi == data.Kullanici_Adi)
                 {
                     res.AddError(ErrorMessageCode.UsernameAlreadyExists, "Kullanıcı adı kayıtlı");
+                    return res;
                 }
 
-                if (mezun.Kullanici_Adi==data.Kullanici_Adi)
+                else if (mezun.Mail == data.Mail)
                 {
                     res.AddError(ErrorMessageCode.EmailAlreadyExists, "E-Posta adresi kayıtlı.");
+                    return res;
                 }
-                else
-                {
-                    int dbResult = base.Insert(new MezunTablo()
-                    {
-                        Ad = data.Ad,
-                        Kullanici_Adi = data.Kullanici_Adi,
-                        Sifre=data.Sifre,
-                        Onaylandi=false,
-                        Mail=data.Mail
-                        
-
-                    });
-                }
-            }
+            } 
+                
+                    
+                    
+                   
+                    MezunTablo mezunTablo = new MezunTablo();
+                    mezunTablo.Ad = data.Ad;
+                     mezunTablo.Soyad = data.Soyad;       
+                    mezunTablo.Kullanici_Adi = data.Kullanici_Adi;
+                    mezunTablo.Sifre = data.Sifre;
+                    mezunTablo.Onaylandi = false;
+                    mezunTablo.Mail = data.Mail;
+                    mezunTablo.DogumYeri = data.DogumYeri;
+                    mezunTablo.Tc_No = data.TcKimlik;
+                    mezunTablo.DogumTarihi = data.DogumTarihi;
+                    Insert(mezunTablo);
+                    
+                
+            
             return res;
 
         }
@@ -59,19 +68,16 @@ namespace Mezun_Portali.BusinessLayer
 
             return res;
         }
-        public BusinessLayerResult<MezunTablo> Giris(RegisterViewModel data)
+        public BusinessLayerResult<MezunTablo> Giris(LoginViewModel data)
         {
             BusinessLayerResult<MezunTablo> res = new BusinessLayerResult<MezunTablo>();
-            MezunTablo mezun = Find(x => x.Kullanici_Adi == data.Kullanici_Adi || x.Mail == data.Mail && x.Sifre==data.Sifre);
+            MezunTablo mezun = Find(x => x.Kullanici_Adi == data.username || x.Mail == data.email && x.Sifre==data.password);
             res.Result = mezun;
             if (mezun==null)
             {
-                res.AddError(ErrorMessageCode.UserCouldNotFind,"Hatalı Giriş")
+                res.AddError(ErrorMessageCode.UserCouldNotFind, "Hatalı Giriş");
             }
-            else
-            {
-
-            }
+            
             return res;
         }
     }

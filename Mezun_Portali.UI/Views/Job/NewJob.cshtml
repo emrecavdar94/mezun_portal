@@ -5,7 +5,7 @@
 }
 
 <div class="portlet light bordered">
-    @using (Html.BeginForm("Emre", "Job", FormMethod.Post,
+    @using (Html.BeginForm("NewJob", "Job", FormMethod.Post,
                                                           new { enctype = "multipart/form-data" }))
     {
     <div class="portlet-body form">
@@ -68,52 +68,74 @@
                         </div>
                     </div>
                     <!--/span-->
-                 
-                         <div class="col-md-6">
-                             <div class="form-group">
-                             <label class="control-label">Açıklama </label>
-                             <input type="text" id="Aciklama" name="jobAciklama" class="form-control" placeholder="Açıklama  Giriniz!">
-                         </div>
-                    </div>
-                
-                <!--/row-->
-               
-                <div class="row">
-                   
-                    <div class="col-md-12 ">
-                        <h3 class="form-section">İletişim Bilgileri</h3>
-                        
-                    </div>
-                </div>
-                <div class="row">
+
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label>Telefon</label>
-                            <input type="text" id="Telefon"  name="jobTelefon" class="form-control" placeholder="Telefon Bilgisini Giriniz!">
+                            <label class="control-label">Açıklama </label>
+                            <input type="text" id="Aciklama" name="jobAciklama" class="form-control" placeholder="Açıklama  Giriniz!">
                         </div>
                     </div>
-                    <!--/span-->
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label>E-Posta</label>
-                            <input type="text" id="Eposta" name="jobEposta" class="form-control" placeholder="E-posta Bilgisini Giriniz!">
+
+                    <!--/row-->
+
+                    <div class="row">
+
+                        <div class="col-md-12 ">
+                            <h3 class="form-section">İletişim Bilgileri</h3>
+
                         </div>
                     </div>
-                    <!--/span-->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Telefon</label>
+                                <input type="text" id="Telefon" name="jobTelefon" class="form-control" placeholder="Telefon Bilgisini Giriniz!">
+                            </div>
+                        </div>
+                        <!--/span-->
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>E-Posta</label>
+                                <input type="text" id="Eposta" name="jobEposta" class="form-control" placeholder="E-posta Bilgisini Giriniz!">
+                            </div>
+                            
+                        </div>
+                        <!--/span-->
+                    </div>
+                    <!--/row-->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Adres</label>
+                                <input type="text" id="Adres" name="jobAdres" class="form-control" placeholder="Adres Bilgisini Giriniz!">
+                            </div>
+
+                        </div>
+                        <!--/span-->
+                        <!--/span-->
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group mt-repeater">
+                                <div data-repeater-list="group-b">
+                                  
+                                    <div data-repeater-item class="mt-repeater-item mt-overflow">
+                                        <label class="control-label">Aranan Nitelik:</label>
+                                        <div class="mt-repeater-cell">
+                                            <input type="text" name="ilannitelik[]" class="form-control" placeholder="">
+                                            <a href="javascript:;" data-repeater-delete class="btn btn-danger mt-repeater-delete mt-repeater-del-right mt-repeater-btn-inline">
+                                                <i class="fa fa-close"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="javascript:;" data-repeater-create class="btn btn-success mt-repeater-add">
+                                    <i class="fa fa-plus"></i> Nitelik Ekle
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <!--/row-->
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label>Adres</label>
-                            <input type="text" id="Adres" name="jobAdres" class="form-control" placeholder="Adres Bilgisini Giriniz!">
-                        </div>
-                    </div>
-                    <!--/span-->
-                    
-                    <!--/span-->
-                </div>
-            </div>
             <div class="form-actions right">
                 <button type="submit">Kaydet</button>
                
@@ -124,4 +146,5 @@
 
             </div>
     }
+    
 </div>
