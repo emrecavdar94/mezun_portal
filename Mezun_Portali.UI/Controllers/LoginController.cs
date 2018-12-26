@@ -60,5 +60,10 @@ namespace Mezun_Portali.UI.Controllers
             }
             return RedirectToAction("Login");
         }
+        public ActionResult Logout()
+        {
+            Session.Remove("kullanici");
+            return RedirectToAction("Login");
+        }
     }
 }

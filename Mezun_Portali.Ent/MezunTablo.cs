@@ -19,7 +19,7 @@ namespace Mezun_Portali.Ent
             HobiBilgileri = new HashSet<HobiBilgileri>();
             IletisimBilgileri = new HashSet<IletisimBilgileri>();
             KariyerBilgileri = new HashSet<KariyerBilgileri>();
-           
+            CV = new HashSet<CV>();
             KullaniciAyarlari = new HashSet<KullaniciAyarlari>();
             Mesajlar = new HashSet<Mesajlar>();
             Mesajlar1 = new HashSet<Mesajlar>();
@@ -55,6 +55,8 @@ namespace Mezun_Portali.Ent
 
         [StringLength(11)]
         public string Tc_No { get; set; }
+
+        public int CVid { get; set; }
 
         [Column(TypeName = "date")]
         public DateTime? DogumTarihi { get; set; }
@@ -116,5 +118,10 @@ namespace Mezun_Portali.Ent
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SertifikaBilgileri> SertifikaBilgileri { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CV> CV { get; set; }
+
+        public virtual CV cv { get; set; }
     }
 }

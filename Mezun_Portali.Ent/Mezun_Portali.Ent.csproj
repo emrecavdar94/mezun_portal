@@ -54,6 +54,7 @@
     <Compile Include="ArkadaslikBilgileri.cs" />
     <Compile Include="AskerlikDurum.cs" />
     <Compile Include="Bildirimler.cs" />
+    <Compile Include="CV.cs" />
     <Compile Include="Duyurular.cs" />
     <Compile Include="EgitimBilgileri.cs" />
     <Compile Include="Messages\ErrorMessageObj.cs" />

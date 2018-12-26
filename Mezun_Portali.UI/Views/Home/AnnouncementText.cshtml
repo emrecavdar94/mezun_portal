@@ -2,37 +2,72 @@
 @using Mezun_Portali.BusinessLayer.Results;
 @using Mezun_Portali.Ent;
 @model BusinessLayerResult<Duyurular>
-@@{
+@{
     ViewBag.Title = "DuyuruMetin";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <div class="portlet light bordered">
+    @if (Model.Errors.Count == 0)
+    {
 
-    <div class="portlet-body">
-        <h4 class="block">@Model.Result.DuyuruBaslik</h4>
-        <div>
-            <span class="badge">@Model.Result.Duyuru_Tarihi</span><div class="pull-right">
 
+        <div class="portlet-body">
+
+            <h4 class="block">@Model.Result.DuyuruBaslik</h4>
+            <div>
+                <span class="badge">@Model.Result.Duyuru_Tarihi</span><div class="pull-right">
+
+                </div>
             </div>
+            <div class="well"> @Model.Result.Duyuru</div>
+            <ul class="pager">
+                @if (Model.Result.Id == 1)
+                {
+                    <li class="previous disabled">
+                        <a href="#"> &larr; Older </a>
+                    </li>
+                }
+                else
+                {
+                    <li class="previous disabled">
+                        <a href="~/Home/AnnouncementText/@(Model.Result.Id-1)"> &larr; Older </a>
+                    </li>
+                }
+
+                <li class="next">
+                    <a href="~/Home/AnnouncementText/@(Model.Result.Id+1)"> Newer &rarr; </a>
+                </li>
+            </ul>
         </div>
-        <div class="well"> @Model.Result.Duyuru</div>
-        <ul class="pager">
-            <li class="previous">
-                <a href="~/Home/AnnouncementText/@(Model.Result.Id-1)"> &larr; Older </a>
-            </li>
-            <li class="next">
-                <a href="javascript:;"> Newer &rarr; </a>
-            </li>
-        </ul>
-    </div>
-</div>
-@section Jqry{
-    $(document).ready(function(){
-    if (i > 0){
-
-    <img src="/img.jpg" />;
     }
-    });
+    @if (Model.Errors.Count >0)
+    {
 
-}
+
+        <div class="portlet-body">
+
+            <h4 class="block"></h4>
+            
+            <div class="well"> Gösterilecek Duyuru Bulunmamaktadır.</div>
+            <ul class="pager">
+                
+               
+                    <li class="previous disabled">
+                         &larr; Older 
+                    </li>
+                
+               
+                    <li class="previous">
+                        <a href="~/Home/AnnouncementText/@(Model.Result.Id-1)"> &larr; Older </a>
+                    </li>
+                
+
+                <li class="next">
+                    <a href="javascript:;"> Newer &rarr; </a>
+                </li>
+            </ul>
+        </div>
+    }
+</div>
+  

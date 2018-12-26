@@ -28,9 +28,16 @@ namespace Mezun_Portali.UI.Controllers
         }
         public ActionResult AnnouncementText( int id)
         {
+            
+            if (id <=0)
+            {
+                id = 1;
+            }
             duyuruResult = duyuruManager.Bul(id);
+            
 
             return View(duyuruResult);
+
         }
 
     }
